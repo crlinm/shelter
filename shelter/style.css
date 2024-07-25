@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
+:root {
+	--color-light-xl: #fff;
+	--color-light-l: #f6f6f6;
+	--color-light-s: #fafafa;
+	--color-dark-s: #cdcdcd;
+	--color-dark-m: #b2b2b2;
+	--color-dark-l: #545454;
+	--color-dark-xl: #4c4c4c;
+	--color-dark-2xl: #444;
+	--color-dark-3xl: #292929;
+	--color-primary: #f1cdb3;
+	--color-primary-light: #fddcc4;
+	--start-screen-gradient-background: #211f20;
+	--footer-gradient-background: #211f20;
+}
+
+:root {
+    --font-family: "Georgia", sans-serif;
+    --second-family: "Arial", sans-serif;
+    --third-family: "Inter", sans-serif;
+}
+
 
 * {
     box-sizing: border-box;
@@ -13,12 +35,12 @@
 
 body {
     width: 1280px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Georgia, Arial, sans-serif;
     font-size: 18px;
 }
 
 h1, h2, h3{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, Arial, sans-serif;
 }
 
 img.start-screen-background{
@@ -68,4 +90,107 @@ img.start-screen-background{
 .about-the-shelter-grid{
     display: grid;
     grid-template-columns: max-content 1fr;
+}
+
+.our-friends{
+    background-color: #F6F6F6;
+}
+
+.our-friends-title{
+    width: 400px;
+    height: 90px;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: var(--color-dark-l);
+
+    text-align: center;
+    margin-inline: auto;
+}
+
+.our-friends-pics-grid{
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: baseline;
+    column-gap: 80px;
+    row-gap: 20px;
+    
+    border-radius: 9px;
+    padding: 30px 35px;
+
+    & > * {
+        grid-row: 1/-1;
+        display: grid;
+        grid-template-rows: subgrid;
+        justify-items: center;
+        background-color: var(--color-light-s);
+    }
+}
+
+.learn-more-btn{
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    border-radius: 100px;
+    padding: 15px 45px;
+    width: 187px;
+    height: 52px;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-3xl);
+}
+
+.our-friends-pet-name{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: var(--color-dark-l);
+}
+
+.our-friends-slider-arrow   {
+    background-color: transparent;
+    & > * {
+        grid-row: 1/-1;
+        align-self: center;
+    }
+    /* border: 2px solid var(--color-primary);
+    border-radius: 100px; */
+}
+
+.get-rest-btn-container{
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-3xl);
+}
+
+.get-the-rest-btn{
+    /* height: 52px; */
+    background-color: #F1CDB3;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    font-family: Georgia, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-3xl);
+    text-align: center;
+    padding: 20px 30px;
+    margin-top: 30px;
 }
