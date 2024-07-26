@@ -29,14 +29,14 @@
     margin: 0;
 }
 
-.page{
-    margin-inline: auto;
-}
-
 body {
-    width: 1280px;
     font-family: Georgia, Arial, sans-serif;
     font-size: 18px;
+}
+
+.page{
+    width: 1280px;
+    margin-inline: auto;
 }
 
 h1, h2, h3{
@@ -63,6 +63,7 @@ a{
 
 .start-screen{
     background: url(./assets/img/start-screen-background.jpg);
+    padding-top: 30px;
 }
 
 .logo-title{
@@ -72,7 +73,6 @@ a{
     line-height: 110%;
     letter-spacing: 0.06em;
     color: var(--color-primary);
-
 }
 
 .logo-subtitle{
@@ -100,10 +100,16 @@ a{
     &>ul{
         display: flex;
         list-style: none;
-        gap: 9px;
+        gap: 35px;
     }
-    margin: 30px;
+    margin: 0 30px;
     color: white;
+}
+
+.nav-activate{
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: var(--color-primary);
 }
 
 .nav-grid>ul>a{
@@ -116,18 +122,72 @@ a{
     align-items: center;
     margin: 30px;
     color: white;
+    
+    margin-left: 40px;
 }
 
-.button-primary{
+.not-only-text h2{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 130%;
+    color: var(--color-light-xl);
+    margin-bottom: 42px;
+}
+
+.not-only-text p{
+    width: 460px;
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: var(--color-dark-s);
+    margin-bottom: 42px;
+}
+
+.button-make-a-friend{
     width: 207px;
     height: 52px;
     background-color: #F1CDB3;
     border-radius: 100px;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-3xl);
 }
 
 .about-the-shelter-grid{
     display: grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: min-content min-content;
+    gap: 120px;
+    justify-content: center;
+    
+}
+
+.about-the-shelter-text{
+    width: 430px;
+}
+
+.about-the-shelter-text h2{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
+}
+
+.about-the-shelter-text p{
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: var(--color-dark-xl);
+
+    margin-top: 25px;
 }
 
 .our-friends{
