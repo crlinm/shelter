@@ -43,11 +43,10 @@ h1, h2, h3{
     font-family: Georgia, Arial, sans-serif;
 }
 
-img.start-screen-background{
-    position: absolute;
-    z-index: -1;
-    inset-block-start: 0;
-    inset-inline: 0;
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 
 .header{
@@ -55,10 +54,49 @@ img.start-screen-background{
     flex-direction: row;
 }
 
+/* img.start-screen-background{
+    position: absolute;
+    z-index: -1;
+    inset-block-start: 0;
+    inset-inline: 0;
+} */
+
+.start-screen{
+    background: url(./assets/img/start-screen-background.jpg);
+}
+
+.logo-title{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: var(--color-primary);
+
+}
+
+.logo-subtitle{
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: var(--color-light-xl);
+
+    padding: 10px;
+}
+
 .nav-grid{
     display: grid;
     grid-template-columns: max-content 1fr max-content;
+    
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: var(--color-dark-s);
+
     align-items: center;
+
     &>ul{
         display: flex;
         list-style: none;
@@ -94,6 +132,7 @@ img.start-screen-background{
 
 .our-friends{
     background-color: #F6F6F6;
+    padding: 50px 50px;
 }
 
 .our-friends-title{
@@ -193,4 +232,34 @@ img.start-screen-background{
     text-align: center;
     padding: 20px 30px;
     margin-top: 30px;
+}
+
+.help-shelter-title{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: var(--color-dark-l);
+}
+
+.can-help-our-shelter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.donation{
+    width: 1280px;
+    height: 462px;
+    background: var(--color-light-l);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.footer-contacts{
+    background: url(./assets/img/footer-background.png);
 }
