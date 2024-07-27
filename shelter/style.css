@@ -39,10 +39,6 @@ body {
     margin-inline: auto;
 }
 
-/* h1, h2, h3{
-    font-family: Georgia, Arial, sans-serif;
-} */
-
 a{
     cursor: pointer;
     text-decoration: none;
@@ -358,6 +354,7 @@ a{
     display: flex;
     flex-direction: row;
     margin: 20px 0;
+    gap: 15px;
 }
 
 .donation-note{
@@ -371,4 +368,46 @@ a{
 
 .footer-contacts{
     background: url(./assets/img/footer-background.png);
+
+    display: flex;
+    flex-direction: row;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: var(--color-light-xl);
+
+    gap: 160px;
+
+    padding: 40px 40px 0 40px;
+}
+
+.footer-contact-column{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footer-title{
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: var(--color-light-xl);
+}
+
+.contact-point{
+    display: flex;
+    flex-direction: row;
+
+    /* align-items: center; */
+    gap: 20px;
+}
+
+.footer-p{
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: var(--color-primary);
 }
