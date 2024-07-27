@@ -298,6 +298,8 @@ a{
     letter-spacing: 0.06em;
     text-align: center;
     color: var(--color-dark-l);
+
+    padding-top: 80px;
 }
 
 .can-help-our-shelter{
@@ -307,7 +309,21 @@ a{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 120px;
+    column-gap: 120px;
+    row-gap: 55px;
+    padding: 60px 40px 100px 40px;
+
+    &>*{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 30px;
+
+        &>img{
+            width: 60px;
+            height: 60px;
+        }
+    }
 
     &>* >*{
             font-family: var(--font-family);
@@ -317,7 +333,7 @@ a{
             letter-spacing: 0.06em;
             text-align: center;
             color: var(--color-dark-l);
-    }   
+    }
 }
 
 
