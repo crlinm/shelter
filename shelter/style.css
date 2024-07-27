@@ -320,26 +320,33 @@ a{
     }   
 }
 
+
 .donation{
-    width: 1280px;
-    height: 462px;
     background: var(--color-light-l);
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
-
+    grid-template-columns: max-content 380px;
+    justify-content: center;
+    align-items: center;
 
     font-family: var(--font-family);
     font-weight: 400;
 
+    gap: 30px;
+
     padding-top: 80px;
+    padding-bottom: 100px;
 }
 
 .donation-text h2{
+    font-family: var(--font-family);
+    font-weight: 400;
     font-size: 35px;
     line-height: 130%;
     letter-spacing: 0.06em;
     color: var(--color-dark-l);
+
+    padding-bottom: 20px;
 }
 
 .donation-bank-name{
@@ -347,14 +354,29 @@ a{
     line-height: 110%;
     letter-spacing: 0.06em;
     color: var(--color-dark-l);
-    margin: 20px 0;
+    padding-bottom: 20px;
 }
 
 .card-number-donation{
-    display: flex;
+    border-radius: 9px;
+    padding: 10px 15px;
+    justify-content: center;
+
+    background: var(--color-primary);
+
+    display: inline-flex;
     flex-direction: row;
-    margin: 20px 0;
+
     gap: 15px;
+
+    &>*{
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 115%;
+        letter-spacing: 0.06em;
+        color: var(--color-dark-l);
+    }
 }
 
 .donation-note{
@@ -363,33 +385,9 @@ a{
     font-size: 12px;
     line-height: 150%;
     color: var(--color-dark-m);
-    margin: 20px 0;
+    padding-top: 20px;
 }
 
-/* .footer-contacts{
-    background: url(./assets/img/footer-background.png);
-
-    display: flex;
-    flex-direction: row;
-
-    font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 130%;
-    letter-spacing: 0.06em;
-    color: var(--color-light-xl);
-
-    gap: 158px;
-
-    padding: 40px 40px 0 40px;
-}
-
-.footer-contact-column{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding-top: 16px;
-} */
 
 .footer-contacts{
     background: url(./assets/img/footer-background.png);
