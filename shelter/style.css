@@ -379,7 +379,7 @@ a{
     letter-spacing: 0.06em;
     color: var(--color-light-xl);
 
-    gap: 160px;
+    gap: 158px;
 
     padding: 40px 40px 0 40px;
 }
@@ -387,7 +387,8 @@ a{
 .footer-contact-column{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
+    padding-top: 16px;
 }
 
 .footer-title{
@@ -397,11 +398,9 @@ a{
     color: var(--color-light-xl);
 }
 
-.contact-point{
+.footer-contact-point{
     display: flex;
     flex-direction: row;
-
-    /* align-items: center; */
     gap: 20px;
 }
 
