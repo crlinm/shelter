@@ -30,7 +30,7 @@
 }
 
 body {
-    font-family: Georgia, Arial, sans-serif;
+    font-family: var(--font-family);
     font-size: 18px;
 }
 
@@ -39,9 +39,9 @@ body {
     margin-inline: auto;
 }
 
-h1, h2, h3{
+/* h1, h2, h3{
     font-family: Georgia, Arial, sans-serif;
-}
+} */
 
 a{
     cursor: pointer;
@@ -305,10 +305,23 @@ a{
 }
 
 .can-help-our-shelter{
+    max-width: 1026;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    gap: 120px;
+
+    &>* >*{
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 115%;
+            letter-spacing: 0.06em;
+            text-align: center;
+            color: var(--color-dark-l);
+    }   
 }
 
 .donation{
@@ -318,6 +331,42 @@ a{
 
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+
+    font-family: var(--font-family);
+    font-weight: 400;
+
+    padding-top: 80px;
+}
+
+.donation-text h2{
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
+}
+
+.donation-bank-name{
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
+    margin: 20px 0;
+}
+
+.card-number-donation{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+
+.donation-note{
+    font-family: var(--second-family);
+    font-style: italic;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--color-dark-m);
+    margin: 20px 0;
 }
 
 .footer-contacts{
