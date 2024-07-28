@@ -117,18 +117,17 @@ a{
     text-decoration: underline;
     text-underline-offset: 5px;
     text-decoration-thickness: 2px;
-    text-decoration-color: var(--color-light-s);
+    text-decoration-color: var(--color-primary);
 }
 
 .nav-grid>ul>a{
-    color: white;
+    color: var(--color-dark-s);
 }
 
 .not-only-grid{
     display: grid;
     grid-template-columns: 1fr max-content;
-    /* align-items: center; */
-    color: white;
+    color: var(--color-dark-s);
 
     padding: 85px 40px 0 40px;
 }
@@ -217,7 +216,7 @@ a{
 
 
 .our-friends{
-    background-color: #F6F6F6;
+    background: var(--color-light-l);
     padding-top: 78px;
     padding-bottom: 60px;
 }
@@ -329,6 +328,9 @@ a{
     padding: 15px 45px;
 }
 
+.can-help-our-shelter-container{
+    background: var(--color-light-xl);
+}
 
 .help-shelter-title{
     font-family: var(--font-family);
