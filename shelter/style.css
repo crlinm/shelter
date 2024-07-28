@@ -58,12 +58,16 @@ a{
 
 .start-screen{
     background: url(./assets/img/start-screen-background.jpg);
-    padding-top: 30px;
+    /* width: 100%; */
+    padding-top: 25px;
 }
 
 .logo{
     display: flex;
     flex-direction: column;
+    row-gap: 5px;
+    padding-top: 6px;
+    align-items: center;
 }
 
 .logo-title{
@@ -81,6 +85,8 @@ a{
     font-size: 13px;
     letter-spacing: 0.1em;
     color: var(--color-light-xl);
+
+    padding-left: 5px;
 }
 
 .nav-grid{
@@ -102,14 +108,16 @@ a{
     }
 
     padding-left: 40px;
-    padding-right: 42px;
+    padding-right: 40px;
 
 }
 
 .nav-activate{
     text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-decoration-color: var(--color-primary);
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var
+    (--color-primary);
 }
 
 .nav-grid>ul>a{
@@ -122,14 +130,12 @@ a{
     align-items: center;
     color: white;
 
-    padding: 90px 40px 0 40px;
+    padding: 80px 40px 0 40px;
 }
 
 .not-only-text{
     display: flex;
     flex-direction: column;
-
-    /* align-content: center; */
 }
 
 .not-only-text h2{
@@ -152,14 +158,15 @@ a{
 }
 
 .make-a-friend-btn-container{
-    padding-bottom: 80px;
+    padding-top: 20px;
+    padding-bottom: 90px;
 }
 
 .button-make-a-friend{
-    width: 207px;
-    height: 52px;
-    background-color: #F1CDB3;
     border-radius: 100px;
+
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background: var(--color-primary);
 
     font-family: var(--font-family);
     font-weight: 400;
@@ -167,6 +174,8 @@ a{
     line-height: 130%;
     letter-spacing: 0.06em;
     color: var(--color-dark-3xl);
+
+    padding: 15px 45px;
 }
 
 .about-the-shelter-grid{
@@ -233,7 +242,7 @@ a{
     justify-content: center;
     align-items: baseline;
     column-gap: 90px;
-    row-gap: 20px;
+    row-gap: 30px;
     
     border-radius: 9px;
     padding: 30px 35px;
@@ -244,7 +253,8 @@ a{
         grid-template-rows: subgrid;
         justify-items: center;
         background-color: var(--color-light-s);
-
+        padding-bottom: 30px;
+        justify-content: space-between;
     }
 }
 
@@ -254,7 +264,6 @@ a{
     border-radius: 100px;
     padding: 15px 45px;
     width: 187px;
-    height: 52px;
 
     font-family: var(--font-family);
     font-weight: 400;
@@ -279,6 +288,8 @@ a{
         grid-row: 1/-1;
         align-self: center;
     }
+
+    margin-top: 20px;
     /* border: 2px solid var(--color-primary);
     border-radius: 100px; */
 }
@@ -293,8 +304,8 @@ a{
     letter-spacing: 0.06em;
     color: var(--color-dark-3xl);
 
-    padding-top: 60px;
-    padding-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .get-the-rest-btn{
@@ -310,7 +321,7 @@ a{
     color: var(--color-dark-3xl);
 
     text-align: center;
-    padding: 20px 30px;
+    padding: 15px 45px;
 }
 
 
