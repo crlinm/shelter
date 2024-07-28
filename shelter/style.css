@@ -564,3 +564,67 @@ footer{
         color: var(--color-primary-light);
     }
 }
+
+
+
+
+.logo-pets-title{
+    color: var(--color-dark-l);
+}
+
+.logo-pets-subtitle{
+    color: var(--color-dark-3xl);
+}
+
+.nav-grid-pets{
+    color: var(--color-dark-l);
+    padding-top: 23px;
+    padding-bottom: 25px;
+}
+
+.nav-other-pets{
+    transition: 0.3s;
+}
+
+.nav-other-pets:hover{
+    color: var(--color-dark-3xl);
+}
+
+.nav-grid-pets>ul>a{
+    color: var(--color-dark-3xl);
+}
+
+
+
+.our-friends-pets-title{
+    padding-top: 5px;
+    padding-bottom: 60px;
+}
+
+.our-friends-pets{
+    background: var(--color-light-l);
+    padding-top: 78px;
+    padding-bottom: 60px;
+}
+
+.our-friends-pics-flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 40px;
+    row-gap: 55px;
+
+    &>*{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 30px;
+
+        &>img{
+            width: 270px;
+            height: 270px;
+        }
+    }
+}
