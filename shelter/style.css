@@ -22,8 +22,7 @@
     --third-family: "Inter", sans-serif;
 }
 
-
-* {
+*, *:before, *:after {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -34,10 +33,6 @@ body {
     font-size: 18px;
 }
 
-.page{
-    width: 1280px;
-    margin-inline: auto;
-}
 
 a{
     cursor: pointer;
@@ -50,16 +45,14 @@ a{
     flex-direction: row;
 }
 
-/* img.start-screen-background{
-    position: absolute;
-    z-index: -1;
-    inset-block-start: 0;
-    inset-inline: 0;
-} */
+.page{
+    width: 1280px;
+    margin-inline: auto;
+}
 
 .start-screen{
-    background: url(./assets/img/start-screen-background.jpg);
-    /* width: 100%; */
+    background: url(./assets/img/start-screen-gradient-background.jpg);
+    background-size: cover;
     padding-top: 24px;
 }
 
@@ -118,6 +111,14 @@ a{
     text-underline-offset: 5px;
     text-decoration-thickness: 2px;
     text-decoration-color: var(--color-primary);
+}
+
+.nav-other{
+    transition: 0.3s;
+}
+
+.nav-other:hover{
+    color: var(--color-light-xl);
 }
 
 .nav-grid>ul>a{
@@ -179,6 +180,12 @@ a{
     color: var(--color-dark-3xl);
 
     padding: 15px 45px;
+
+    transition: 0.3s;
+}
+
+.button-make-a-friend:hover{
+    background: var(--color-primary-light);
 }
 
 .about-the-shelter-grid{
@@ -260,6 +267,19 @@ a{
     }
 }
 
+.our-friends-slider-card{
+    transition: 0.3s;
+}
+
+.our-friends-slider-card:hover{
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+
+    /* background-color: var(--color-primary-light); */
+    /* &>.learn-more-btn{
+        background-color: var(--color-dark-s);
+    } */
+}
+
 .learn-more-btn{
     background-color: transparent;
     border: 2px solid var(--color-primary);
@@ -285,7 +305,7 @@ a{
     color: var(--color-dark-l);
 }
 
-.our-friends-slider-arrow   {
+.our-friends-slider-arrow{
     background-color: transparent;
     & > * {
         grid-row: 1/-1;
@@ -293,6 +313,15 @@ a{
     }
 
     margin-top: 25px;
+}
+
+.our-friends-slider-arrow>svg{
+    color: transparent;
+    transition: 0.3s;
+}
+
+.our-friends-slider-arrow>svg:hover{
+    color: var(--color-primary-light);
 }
 
 .get-rest-btn-container{
@@ -313,8 +342,7 @@ a{
 
     background: var(--color-primary);
     border-radius: 100px;
-    /* width: 261px;
-    height: 52px; */
+    transition: 0.3s;
 
     font-family: var(--font-family);
 
@@ -326,6 +354,10 @@ a{
 
     text-align: center;
     padding: 15px 45px;
+}
+
+.get-the-rest-btn:hover{
+    background: var(--color-primary-light);
 }
 
 .can-help-our-shelter-container{
@@ -437,6 +469,14 @@ a{
     }
 }
 
+.card-number-donation{
+    transition: 0.3s;
+}
+
+.card-number-donation:hover{
+    background: var(--color-primary-light);
+}
+
 .donation-note{
     font-family: var(--second-family);
     font-style: italic;
@@ -449,6 +489,7 @@ a{
 
 .footer-contacts{
     background: url(./assets/img/footer-background.png);
+    background-size: cover;
 
     font-family: var(--font-family);
     font-weight: 400;
@@ -483,6 +524,7 @@ a{
     display: flex;
     gap: 18px;
     align-items: center;
+    transition: 0.3s;
 }
 
 .footer-title{
@@ -499,4 +541,10 @@ a{
     line-height: 115%;
     letter-spacing: 0.06em;
     color: var(--color-primary);
+}
+
+.footer-contact-point:hover{
+    &>.footer-p{
+        color: var(--color-primary-light);
+    }
 }
