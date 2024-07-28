@@ -45,7 +45,12 @@ a{
     flex-direction: row;
 }
 
-.page{
+/* .page{
+    width: 1280px;
+    margin-inline: auto;
+} */
+
+main{
     width: 1280px;
     margin-inline: auto;
 }
@@ -54,6 +59,11 @@ a{
     background: url(./assets/img/start-screen-gradient-background.jpg);
     background-size: cover;
     padding-top: 24px;
+}
+
+.start-screen-part{
+    width: 1280px;
+    margin-inline: auto;
 }
 
 .logo{
@@ -486,10 +496,16 @@ a{
     padding-top: 20px;
 }
 
-
-.footer-contacts{
+footer{
     background: url(./assets/img/footer-background.png);
     background-size: cover;
+
+    
+}
+
+.footer-contacts{
+    width: 1280px;
+    margin-inline: auto;
 
     font-family: var(--font-family);
     font-weight: 400;
