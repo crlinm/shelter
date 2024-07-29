@@ -284,10 +284,9 @@ main{
 .our-friends-slider-card:hover{
     box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3);
 
-    /* background-color: var(--color-primary-light); */
-    /* &>.learn-more-btn{
-        background-color: var(--color-dark-s);
-    } */
+    &>.learn-more-btn{
+        background: var(--color-primary-light);
+    }
 }
 
 .learn-more-btn{
@@ -614,19 +613,22 @@ footer{
     align-items: center;
     justify-content: center;
     column-gap: 40px;
-    row-gap: 55px;
+    row-gap: 30px;
 
     &>*{
         display: flex;
         flex-direction: column;
         align-items: center;
-        row-gap: 30px;
+        row-gap: 29px;
 
         &>img{
             width: 270px;
             height: 270px;
         }
+
+        padding-bottom: 30px;
     }
+
 }
 
 .slider-pets{
@@ -635,8 +637,8 @@ footer{
     gap: 21px;
 
     justify-content: center;
-    padding-top: 88px;
-    padding-bottom: 39px;
+    padding-top: 55px;
+    padding-bottom: 42px;
     margin-inline: auto;
 }
 
@@ -654,9 +656,12 @@ footer{
     text-align: center;
     align-content: center;
     color: var(--color-dark-s);
+
+    transition: 0.3s;
 }
 
 .slider-pets-current-page{
+    border: 2px solid var(--color-primary);
     background: var(--color-primary);
     color: var(--color-dark-3xl);
 }
@@ -665,3 +670,11 @@ footer{
     border: 2px solid var(--color-primary);
     color: var(--color-dark-3xl);
 }
+
+/* .our-friends-slider-card:hover{
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+
+    &>.learn-more-btn{
+        background: var(--color-primary-light);
+    }
+} */
