@@ -332,10 +332,12 @@ main{
 .our-friends-slider-arrow>svg{
     color: transparent;
     transition: 0.3s;
+    stroke: #F1CDB3;
 }
 
 .our-friends-slider-arrow>svg:hover{
-    color: var(--color-primary-light);
+    stroke: var(--color-primary-light);
+    fill: var(--color-primary-light);
 }
 
 .get-rest-btn-container{
