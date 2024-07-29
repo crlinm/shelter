@@ -50,10 +50,10 @@ a{
     margin-inline: auto;
 } */
 
-main.main-page{
+/* main.main-page{
     width: 1280px;
     margin-inline: auto;
-}
+} */
 
 .start-screen{
     background: url(./assets/img/start-screen-gradient-background.jpg);
@@ -199,6 +199,10 @@ main.main-page{
 }
 
 .about-the-shelter-grid{
+
+    width: 1280px;
+    margin-inline: auto;
+
     display: grid;
     grid-template-columns: min-content min-content;
     gap: 120px;
@@ -231,9 +235,14 @@ main.main-page{
     padding-top: 25px;
 }
 
+.our-friends-container{
+    background: var(--color-light-l);
+}
 
 .our-friends{
-    background: var(--color-light-l);
+    width: 1280px;
+    margin-inline: auto;
+
     padding-top: 78px;
     padding-bottom: 60px;
 }
@@ -378,6 +387,8 @@ main.main-page{
 
 .can-help-our-shelter-container{
     background: var(--color-light-xl);
+    width: 1280px;
+    margin-inline: auto;
 }
 
 .help-shelter-title{
@@ -426,9 +437,15 @@ main.main-page{
     }
 }
 
+.donation-wrapper{
+    background: var(--color-light-l);
+    background-size: cover;
+}
 
 .donation{
-    background: var(--color-light-l);
+    width: 1280px;
+    margin-inline: auto;
+    /* background: var(--color-light-l); */
 
     display: grid;
     grid-template-columns: max-content 380px;
