@@ -50,7 +50,7 @@ a{
     margin-inline: auto;
 } */
 
-main{
+main.main-page{
     width: 1280px;
     margin-inline: auto;
 }
@@ -602,14 +602,23 @@ footer{
 
 
 
-.our-friends-pets-title{
-    padding-top: 5px;
-    padding-bottom: 60px;
+.our-friends-wrapper{
+    background: var(--color-light-l);
+    background-size: cover;
+    /* width: 100%; */
 }
 
 .our-friends-pets{
-    background: var(--color-light-l);
+    width: 1280px;
+    margin-inline: auto;
+
+    /* background: var(--color-light-l); */
     padding-top: 78px;
+    padding-bottom: 59px;
+}
+
+.our-friends-pets-title{
+    padding-top: 5px;
     padding-bottom: 60px;
 }
 
@@ -629,6 +638,7 @@ footer{
         align-items: center;
         border-radius: 9px;
         row-gap: 29px;
+        background: var(--color-light-s);
 
         &>img{
             width: 270px;
