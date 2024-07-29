@@ -271,6 +271,8 @@ main{
         display: grid;
         grid-template-rows: subgrid;
         justify-items: center;
+
+        border-radius: 9px;
         background-color: var(--color-light-s);
         padding-bottom: 30px;
         justify-content: space-between;
@@ -286,6 +288,7 @@ main{
 
     &>.learn-more-btn{
         background: var(--color-primary-light);
+        border-color: var(--color-primary-light);
     }
 
     cursor: pointer;
@@ -616,11 +619,13 @@ footer{
     justify-content: center;
     column-gap: 40px;
     row-gap: 30px;
+    color: var(--color-light-s);
 
     &>*{
         display: flex;
         flex-direction: column;
         align-items: center;
+        border-radius: 9px;
         row-gap: 29px;
 
         &>img{
@@ -661,25 +666,35 @@ footer{
     color: var(--color-dark-s);
 
     transition: 0.3s;
+    user-select: none;
 }
 
 .slider-pets-current-page{
-    border: 2px solid var(--color-primary);
-    background: var(--color-primary);
+    border: 2px solid var(--color-primary-light);
     color: var(--color-dark-3xl);
+    background: var(--color-primary-light);
+
+    cursor: default;
+}
+
+.slider-pets-current-page:hover{
+    background: var(--color-primary);
+    border: 2px solid var(--color-primary);
 }
 
 .slider-pets-next-item{
     border: 2px solid var(--color-primary);
     color: var(--color-dark-3xl);
+
+    cursor: pointer;
 }
 
 .slider-pets-next-item:hover{
     background: var(--color-primary-light);
-    cursor: pointer;
+    border-color: var(--color-primary-light);;
 }
 
-.slider-pets-inactive-item:hover{
+.slider-pets-inactive-item{
     cursor: not-allowed;
 }
 
