@@ -287,6 +287,8 @@ main{
     &>.learn-more-btn{
         background: var(--color-primary-light);
     }
+
+    cursor: pointer;
 }
 
 .learn-more-btn{
@@ -629,6 +631,7 @@ footer{
         padding-bottom: 30px;
     }
 
+    transition: 0.3s;
 }
 
 .slider-pets{
@@ -671,10 +674,16 @@ footer{
     color: var(--color-dark-3xl);
 }
 
-/* .our-friends-slider-card:hover{
-    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+.slider-pets-next-item:hover{
+    background: var(--color-primary-light);
+    cursor: pointer;
+}
 
-    &>.learn-more-btn{
-        background: var(--color-primary-light);
-    }
-} */
+.slider-pets-inactive-item:hover{
+    cursor: not-allowed;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
