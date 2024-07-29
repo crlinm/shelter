@@ -628,3 +628,40 @@ footer{
         }
     }
 }
+
+.slider-pets{
+    display: flex;
+    flex-direction: row;
+    gap: 21px;
+
+    justify-content: center;
+    padding-top: 88px;
+    padding-bottom: 39px;
+    margin-inline: auto;
+}
+
+.slider-pets-item{
+    width: 52px;
+    height: 52px;
+    border: 2px solid var(--color-dark-s);
+    border-radius: 100px;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    text-align: center;
+    align-content: center;
+    color: var(--color-dark-s);
+}
+
+.slider-pets-current-page{
+    background: var(--color-primary);
+    color: var(--color-dark-3xl);
+}
+
+.slider-pets-next-item{
+    border: 2px solid var(--color-primary);
+    color: var(--color-dark-3xl);
+}
