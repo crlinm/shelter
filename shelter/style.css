@@ -293,8 +293,9 @@ a{
 }
 
 .our-friends-slider-card:hover{
-    /* box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3); */
+    
     box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+    background-color: var(--color-light-xl);
 
     &>.learn-more-btn{
         background: var(--color-primary-light);
