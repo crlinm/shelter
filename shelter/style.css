@@ -312,6 +312,7 @@ a{
     padding: 15px 40px;
     width: 187px;
     text-align: center;
+    white-space: nowrap;
 
     font-family: var(--font-family);
     font-weight: 400;
@@ -711,10 +712,10 @@ footer{
     cursor: default;
 }
 
-.slider-pets-current-page:hover{
+/* .slider-pets-current-page:hover{
     border: 2px solid var(--color-primary-light);
     background: var(--color-primary-light);
-}
+} */
 
 .slider-pets-next-item{
     border: 2px solid var(--color-primary);
