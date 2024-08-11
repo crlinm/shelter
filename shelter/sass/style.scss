@@ -45,16 +45,6 @@ a{
     flex-direction: row;
 }
 
-/* .page{
-    width: 1280px;
-    margin-inline: auto;
-} */
-
-/* main.main-page{
-    width: 1280px;
-    margin-inline: auto;
-} */
-
 .start-screen{
     background: url(./assets/img/start-screen-gradient-background.jpg);
     background-size: cover;
@@ -62,7 +52,7 @@ a{
 }
 
 .start-screen-part{
-    width: 1280px;
+    max-width: 1280px;
     margin-inline: auto;
 }
 
@@ -137,7 +127,7 @@ a{
 
 .not-only-grid{
     display: grid;
-    grid-template-columns: 1fr max-content;
+    grid-template-columns: 1fr 1fr;
     color: var(--color-dark-s);
 
     padding: 85px 40px 0 40px;
@@ -162,7 +152,7 @@ a{
 }
 
 .not-only-text p{
-    width: 460px;
+    max-width: 460px;
     font-family: var(--second-family);
     font-weight: 400;
     font-size: 15px;
@@ -200,7 +190,7 @@ a{
 
 .about-the-shelter-grid{
 
-    width: 1280px;
+    max-width: 1280px;
     margin-inline: auto;
 
     display: grid;
@@ -240,7 +230,7 @@ a{
 }
 
 .our-friends{
-    width: 1280px;
+    max-width: 1280px;
     margin-inline: auto;
 
     padding-top: 78px;
@@ -392,7 +382,7 @@ a{
 
 .can-help-our-shelter-container{
     background: var(--color-light-xl);
-    width: 1280px;
+    max-width: 1280px;
     margin-inline: auto;
 }
 
@@ -448,7 +438,7 @@ a{
 }
 
 .donation{
-    width: 1280px;
+    max-width: 1280px;
     margin-inline: auto;
     /* background: var(--color-light-l); */
 
@@ -532,7 +522,7 @@ footer{
 }
 
 .footer-contacts{
-    width: 1280px;
+    max-width: 1280px;
     margin-inline: auto;
 
     font-family: var(--font-family);
@@ -631,7 +621,7 @@ footer{
 }
 
 .our-friends-pets{
-    width: 1280px;
+    max-width: 1280px;
     margin-inline: auto;
 
     /* background: var(--color-light-l); */
