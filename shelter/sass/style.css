@@ -743,6 +743,9 @@ footer {
          column-gap: 40px;
     padding: 30px 31px;
   }
+  .our-friends-pics-flex > .our-friends-slider-card.hide-planshet {
+    display: none;
+  }
   footer {
     overflow: hidden;
   }
@@ -770,21 +773,26 @@ footer {
     -moz-column-gap: 7%;
          column-gap: 7%;
     grid-template-columns: 1fr min-content 1fr;
-    justify-content: stretch;
   }
   .our-friends-pics-grid > .hide-mobile {
     display: none;
   }
 }
+@media (max-width: 579px) {
+  .our-friends-pics-flex > .our-friends-slider-card.hide-mobile {
+    display: none;
+  }
+}
 @media (max-width: 460px) {
   .our-friends-pics-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 5% 1fr 5%;
     grid-template-rows: repeat(4, min-content);
     -moz-column-gap: none;
          column-gap: none;
   }
   .our-friends-pics-grid > .our-friends-slider-arrow {
     grid-row: 4;
+    grid-column: 2;
   }
   .can-help-our-shelter {
     -moz-column-gap: 30px;
