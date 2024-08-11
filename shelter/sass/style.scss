@@ -258,6 +258,7 @@ a{
 
 .our-friends-pics-grid{
     display: grid;
+    grid-template-columns: 1fr repeat(3, min-content) 1fr;
     grid-template-rows: repeat(3, min-content);
     grid-auto-flow: column;
     justify-content: center;
@@ -726,6 +727,24 @@ footer{
     cursor: not-allowed;
 }
 
+
+@media (max-width: 1279px){
+
+    .our-friends-pics-grid{
+        column-gap: 7%;
+        grid-template-columns: 1fr repeat(2, min-content) 1fr;
+        justify-content: stretch;
+
+        &>.hide-planshet{
+            display: none;
+        }
+
+        &>.our-friends-slider-arrow.left-arrow{
+            justify-self: end;
+        }
+    }
+}
+
 @media (max-width: 850px){
     .not-only-grid{
         grid-template-columns: 1fr;
@@ -758,4 +777,35 @@ footer{
         order: 1;
         justify-self: center;
     }
+
+    .donation{
+        grid-template-columns: 1fr;
+    }
+
+    .donation>*:nth-child(1){
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .our-friends-pics-grid{
+        column-gap: 40px;
+        padding: 30px 31px;
+    }
+
+    .can-help-our-shelter{
+        margin-inline: auto;
+        max-width: 630px;
+        column-gap: 80px;
+        justify-content:space-between;
+    }
+
+    footer{
+        overflow: hidden;
+    }
+}
+
+
+@media (max-width: 768px) {
+
 }
