@@ -896,6 +896,16 @@ footer{
 }
 
 @media (max-width: 460px) {
+    .about-the-shelter-text{
+        width: 95%;
+        text-align: justify;
+    }
+
+    .about-the-shelter-text h2{
+        font-size: 25px;
+        text-align: center;
+    }
+
     .our-friends-pics-grid{
         grid-template-columns: 5% 1fr 5%;
         // grid-auto-flow: row dense;
@@ -908,6 +918,11 @@ footer{
             grid-column: 2;
             
         }
+    }
+
+    .our-friends-title{
+        width: 90%;
+        font-size: 25px;
     }
     
     .can-help-our-shelter{
