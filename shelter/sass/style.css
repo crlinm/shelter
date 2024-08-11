@@ -127,6 +127,9 @@ a {
   color: var(--color-dark-s);
   padding: 85px 40px 0 40px;
 }
+.not-only-grid > img {
+  width: 100%;
+}
 
 .not-only-text {
   display: flex;
@@ -738,6 +741,9 @@ footer {
   }
 }
 @media (max-width: 780px) {
+  .nav-grid {
+    padding-left: 34px;
+  }
   .our-friends-pics-grid {
     -moz-column-gap: 40px;
          column-gap: 40px;
@@ -766,6 +772,9 @@ footer {
          column-gap: 10%;
     padding-left: 69px;
     padding-right: 69px;
+  }
+  .nav-grid > ul {
+    display: none;
   }
 }
 @media (max-width: 750px) {
