@@ -674,7 +674,7 @@ footer {
   .our-friends-pics-grid > .hide-planshet {
     display: none;
   }
-  .our-friends-pics-grid > .our-friends-slider-arrow.left-arrow {
+  .our-friends-pics-grid > .our-friends-slider-arrow.right-arrow {
     justify-self: end;
   }
 }
@@ -692,9 +692,22 @@ footer {
 @media (max-width: 930px) {
   .donation {
     grid-template-columns: 1fr;
+    gap: 60px;
+    padding-bottom: 98px;
   }
   .donation > *:nth-child(1) {
     order: 2;
+  }
+}
+@media (max-width: 887px) {
+  .can-help-our-shelter {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    -moz-column-gap: 60px;
+         column-gap: 60px;
+    padding-left: 69px;
+    padding-right: 69px;
   }
 }
 @media (max-width: 850px) {
@@ -730,18 +743,51 @@ footer {
          column-gap: 40px;
     padding: 30px 31px;
   }
-  .can-help-our-shelter {
-    margin-inline: auto;
-    max-width: 630px;
-    -moz-column-gap: 68px;
-         column-gap: 68px;
-    justify-content: space-between;
-  }
   footer {
     overflow: hidden;
   }
   .footer-contacts {
     -moz-column-gap: 60px;
          column-gap: 60px;
+    padding-bottom: 30px;
+  }
+  .footer-title {
+    padding-top: 0;
+  }
+}
+@media (max-width: 765px) {
+  .can-help-our-shelter {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 10%;
+         column-gap: 10%;
+    padding-left: 69px;
+    padding-right: 69px;
+  }
+}
+@media (max-width: 750px) {
+  .our-friends-pics-grid {
+    -moz-column-gap: 7%;
+         column-gap: 7%;
+    grid-template-columns: 1fr min-content 1fr;
+    justify-content: stretch;
+  }
+  .our-friends-pics-grid > .hide-mobile {
+    display: none;
+  }
+}
+@media (max-width: 460px) {
+  .our-friends-pics-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, min-content);
+    -moz-column-gap: none;
+         column-gap: none;
+  }
+  .our-friends-pics-grid > .our-friends-slider-arrow {
+    grid-row: 4;
+  }
+  .can-help-our-shelter {
+    -moz-column-gap: 30px;
+         column-gap: 30px;
   }
 }/*# sourceMappingURL=style.css.map */
