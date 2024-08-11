@@ -27,6 +27,10 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-family);
   font-size: 18px;
@@ -654,6 +658,30 @@ footer {
   cursor: not-allowed;
 }
 
-html {
-  scroll-behavior: smooth;
+@media (max-width: 850px) {
+  .not-only-grid {
+    grid-template-columns: 1fr;
+    row-gap: 100px;
+    padding-top: 55px;
+  }
+  .not-only-text {
+    justify-self: center;
+  }
+  .not-only-text h2 {
+    padding-top: 0;
+  }
+  .make-a-friend-btn-container {
+    align-self: center;
+  }
+  .about-the-shelter-grid {
+    grid-template-columns: min-content;
+    row-gap: 77px;
+  }
+  .about-the-shelter-grid > *:nth-child(1) {
+    order: 2;
+  }
+  .about-the-shelter-pic:nth-child(1) {
+    order: 1;
+    justify-self: center;
+  }
 }/*# sourceMappingURL=style.css.map */
