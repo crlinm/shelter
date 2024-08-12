@@ -135,9 +135,9 @@ a{
 
     padding: 85px 40px 0 40px;
 
-    &>img{
-        width: 100%;
-    }
+    // &>img{
+    //     width: 100%;
+    // }
 }
 
 .not-only-text{
@@ -147,6 +147,10 @@ a{
 
 .not-only{
     display: flex;
+    justify-content: center;
+    &>img{
+        width: 54vw;
+    }
 }
 
 .not-only-text h2{

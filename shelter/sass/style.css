@@ -127,9 +127,6 @@ a {
   color: var(--color-dark-s);
   padding: 85px 40px 0 40px;
 }
-.not-only-grid > img {
-  width: 100%;
-}
 
 .not-only-text {
   display: flex;
@@ -138,6 +135,10 @@ a {
 
 .not-only {
   display: flex;
+  justify-content: center;
+}
+.not-only > img {
+  width: 54vw;
 }
 
 .not-only-text h2 {
