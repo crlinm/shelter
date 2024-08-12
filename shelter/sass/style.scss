@@ -916,11 +916,16 @@ footer{
         &>.our-friends-slider-card{
             grid-row: 1/4;
             grid-column: 1/-1;
+            justify-content: center;
         }
 
         &>.our-friends-slider-arrow{
             grid-row: 4;
         }
+
+        // &>.our-friends-slider-arrow.right-arrow{
+        //     justify-self: end;
+        // }
     }
 
     .our-friends-title{
