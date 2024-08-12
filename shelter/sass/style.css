@@ -724,6 +724,13 @@ footer {
     padding-left: 69px;
     padding-right: 69px;
   }
+  .our-friends-pets-title {
+    padding-bottom: 27px;
+  }
+  .slider-pets {
+    padding-top: 33px;
+    padding-bottom: 20px;
+  }
 }
 @media (max-width: 850px) {
   .not-only-grid {
