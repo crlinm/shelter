@@ -814,7 +814,7 @@ footer {
     padding-bottom: 58px;
   }
 }
-@media (max-width: 765px) {
+@media (max-width: 767px) {
   .can-help-our-shelter {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -823,6 +823,9 @@ footer {
     padding-left: 69px;
     padding-right: 69px;
   }
+  .nav-grid {
+    padding-inline: clamp(1.25rem, 0.778rem + 2.2883vw, 1.875rem);
+  }
   .nav-grid > ul {
     display: none;
   }
@@ -830,6 +833,27 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 5px;
+  }
+  .not-only-grid {
+    padding-inline: 10px;
+  }
+  .not-only-text > h2 {
+    font-size: clamp(1.5625rem, 0.6658rem + 4.3478vw, 2.75rem);
+    text-align: center;
+    letter-spacing: 0.06em;
+  }
+  .not-only-text > p {
+    text-align: center;
+  }
+  .make-a-friend-btn-container {
+    padding-top: 58px;
+    padding-bottom: 6px;
+  }
+  .not-only {
+    left: clamp(0rem, -0.472rem + 2.2883vw, 0.625rem);
+  }
+  .not-only > img {
+    min-width: clamp(16.25rem, 2.4245rem + 69.1275vw, 35.5625rem);
   }
 }
 @media (max-width: 750px) {
