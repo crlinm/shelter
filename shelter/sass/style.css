@@ -760,7 +760,7 @@ footer {
   }
   .about-the-shelter-grid {
     grid-template-columns: min-content;
-    row-gap: 77px;
+    row-gap: 78px;
   }
   .about-the-shelter-grid > *:nth-child(1) {
     order: 2;
@@ -775,11 +775,20 @@ footer {
     padding-top: 0;
   }
   .nav-grid {
-    padding-left: 34px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .nav-grid > ul {
+    gap: 36px;
+  }
+  .not-only {
+    position: relative;
+    left: 10px;
   }
   .our-friends-pics-grid {
-    -moz-column-gap: 43px;
-         column-gap: 43px;
+    -moz-column-gap: 41px;
+         column-gap: 41px;
+    row-gap: 30px;
     padding: 30px 31px;
   }
   .our-friends-pics-flex > .our-friends-slider-card.hide-planshet {
@@ -797,6 +806,12 @@ footer {
   }
   .footer-title {
     padding-top: 0;
+  }
+  .our-friends-pics-flex > * {
+    row-gap: 30px;
+  }
+  .our-friends-pets {
+    padding-bottom: 58px;
   }
 }
 @media (max-width: 765px) {
