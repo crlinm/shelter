@@ -1015,8 +1015,27 @@ footer{
         }
     }
 
-    .donation > * > img{
-        max-width: clamp(16.25rem, -4.0437rem + 98.3936vw, 31.5625rem);
+    .donation {
+        & > * > img{
+            max-width: clamp(16.25rem, -4.0437rem + 98.3936vw, 31.5625rem);
+        }
+        & > * > h2{
+            font-size: clamp(1.5625rem, 0.7342rem + 4.0161vw, 2.1875rem);
+            text-align: center;
+        }
+        & > * > .donation-bank-name{
+            text-align: center;
+        }
+        & > * > .card-number-donation {
+            justify-content: center;
+            
+            & > * {
+                font-size: clamp(0.9375rem, 0.5233rem + 2.008vw, 1.25rem);
+            }
+            & > * > .donation-note {
+                text-align: justify;
+            }
+        }
     }
 }
 
