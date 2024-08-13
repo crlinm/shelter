@@ -855,6 +855,9 @@ footer {
   .not-only > img {
     min-width: clamp(16.25rem, 2.4245rem + 69.1275vw, 35.5625rem);
   }
+  .about-the-shelter-grid {
+    padding-top: 42px;
+  }
 }
 @media (max-width: 750px) {
   .our-friends-pics-grid {
@@ -881,10 +884,21 @@ footer {
   .our-friends-pics-flex > .our-friends-slider-card.hide-mobile {
     display: none;
   }
+  .donation > * > img {
+    max-width: clamp(16.25rem, -4.0437rem + 98.3936vw, 31.5625rem);
+  }
 }
 @media (max-width: 460px) {
+  .about-the-shelter-grid {
+    padding-inline: 0px;
+    justify-items: center;
+    row-gap: clamp(1rem, -8.8365rem + 47.6923vw, 4.875rem);
+  }
+  .about-the-shelter-grid > * > img {
+    max-width: clamp(16.25rem, 9.9038rem + 30.7692vw, 18.75rem);
+  }
   .about-the-shelter-text {
-    width: 95%;
+    width: 100%;
     text-align: justify;
   }
   .about-the-shelter-text h2 {
