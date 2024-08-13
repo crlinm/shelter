@@ -566,6 +566,7 @@ footer{
     &>img{
         grid-row: 1/-1;
         padding-left: 20px;
+        align-self: end;
     }
 }
 
@@ -760,6 +761,14 @@ footer{
 
         &>.our-friends-slider-arrow.right-arrow{
             justify-self: end;
+        }
+    }
+}
+
+@media (max-width: 1200px){
+    .our-friends-pics-flex{
+        &>.hide-planshet{
+            display: none;
         }
     }
 }
