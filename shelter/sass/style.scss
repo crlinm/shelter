@@ -137,6 +137,7 @@ a{
 
     &>img{
         width: 100%;
+        align-self: end;
     }
 }
 
@@ -156,7 +157,8 @@ a{
     font-size: 44px;
     line-height: 130%;
     color: var(--color-light-xl);
-    padding-top: 164px;
+    // padding-top: 164px;
+    padding-top: clamp(0rem, -15.375rem + 32.0313vw, 10.25rem);
 }
 
 .not-only-text p{
@@ -763,9 +765,9 @@ footer{
 }
 
 @media (max-width: 1100px){
-    .not-only-text h2{
-        padding-top: 0;
-    }
+    // .not-only-text h2{
+    //     padding-top: 0;
+    // }
 
     .footer-contacts{
         grid-template-columns: 1fr 1fr;
@@ -827,10 +829,6 @@ footer{
         justify-self: center;
     }
 
-    .not-only-text h2{
-        padding-top: 0;
-    }
-
     .make-a-friend-btn-container{
         align-self: center;
     }
@@ -851,6 +849,11 @@ footer{
 }
 
 @media (max-width: 780px) {
+
+    .not-only-text h2{
+        padding-top: 0;
+    }
+
     .nav-grid{
         padding-left: 34px;
     }
@@ -916,6 +919,16 @@ footer{
         //     justify-self: end;
         // }
     }
+
+    .footer-contact-column:nth-child(1){
+        grid-row: 1/4;
+    }
+    .footer-contact-column:nth-child(2){
+        grid-row: 4/7;
+    }
+    .footer-contacts{
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 579px){
@@ -927,6 +940,14 @@ footer{
 }
 
 @media (max-width: 460px) {
+
+    // .not-only{
+    //     overflow: hidden;
+    // }
+    // .donation{
+    //     overflow: hidden;
+    // }
+
     .about-the-shelter-text{
         width: 95%;
         text-align: justify;
