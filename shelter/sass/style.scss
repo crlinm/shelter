@@ -1130,18 +1130,26 @@ footer{
     .about-the-shelter-grid{
         padding-inline: 0px;
         padding-bottom: 42px;
+        justify-items: center;
+        row-gap: clamp(1rem, -8.8365rem + 47.6923vw, 4.875rem);
 
+        & > .about-the-shelter-pic{
+            min-width: clamp(16.9375rem, 12.3365rem + 22.3077vw, 18.75rem);
+            // min-width: 271px;
+            padding-top: 26px;
+            padding-left: 5px;
+        }
         & > * > img{
             max-width: clamp(16.25rem, 9.9038rem + 30.7692vw, 18.75rem);
         }
-        justify-items: center;
-
-        row-gap: clamp(1rem, -8.8365rem + 47.6923vw, 4.875rem);
     }
 
     .about-the-shelter-text{
         width: 100%;
         text-align: justify;
+        & > p{
+            padding-top: 23px;
+        }
     }
 
     .about-the-shelter-text h2{

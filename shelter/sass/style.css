@@ -981,12 +981,20 @@ footer {
     justify-items: center;
     row-gap: clamp(1rem, -8.8365rem + 47.6923vw, 4.875rem);
   }
+  .about-the-shelter-grid > .about-the-shelter-pic {
+    min-width: clamp(16.9375rem, 12.3365rem + 22.3077vw, 18.75rem);
+    padding-top: 26px;
+    padding-left: 5px;
+  }
   .about-the-shelter-grid > * > img {
     max-width: clamp(16.25rem, 9.9038rem + 30.7692vw, 18.75rem);
   }
   .about-the-shelter-text {
     width: 100%;
     text-align: justify;
+  }
+  .about-the-shelter-text > p {
+    padding-top: 23px;
   }
   .about-the-shelter-text h2 {
     font-size: 25px;
