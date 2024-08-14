@@ -1089,8 +1089,6 @@ footer{
                 justify-content: center;
             }
             & .card-number-donation {
-                // display: flex;
-                // justify-content: center;
                 max-width: 349px;
 
                 & > div {
@@ -1150,6 +1148,17 @@ footer{
         text-align: center;
     }
 
+    .our-friends{
+        padding-top: 42px;
+        padding-bottom: 42px;
+    }
+
+    .our-friends-title{
+        width: 90%;
+        font-size: 25px;
+        padding-bottom: 8px;
+    }
+
     .our-friends-pics-grid{
         grid-template-columns: 1fr 1fr;
         // grid-auto-flow: row dense;
@@ -1172,16 +1181,32 @@ footer{
         // }
     }
 
-    .our-friends-title{
-        width: 90%;
-        font-size: 25px;
+    .our-friends-slider-arrow{
+        margin-top: 0;
+    }
+
+    .get-rest-btn-container{
+        padding-top: 0px;
+        padding-bottom: 0px;
     }
 
     .help-shelter-title{
         // font-size: 25px;
         padding-bottom: 10px;
+        padding-top: 42px;
     }
 
+    .our-friends-pics-grid{
+        padding: 30px 25px 0;
+    }
+
+    .our-friends-pics-grid > *{
+        justify-content: center;
+    }
+
+    .our-friends-pics-grid > .our-friends-slider-arrow.right-arrow{
+        justify-self: center;
+    }
     .donation{
         padding-bottom: 35px;
     }
@@ -1193,19 +1218,6 @@ footer{
             font-size: 25px;
         }
     }
-
-    // .our-friends-pics-grid{
-    //     padding: 30px 25px;
-    // }
-
-    .our-friends-pics-grid > *{
-        justify-content: center;
-    }
-
-    .our-friends-pics-grid > .our-friends-slider-arrow.right-arrow{
-        justify-self: center;
-    }
-
 
 }
 
