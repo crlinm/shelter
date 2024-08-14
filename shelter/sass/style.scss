@@ -87,9 +87,9 @@ a{
 }
 
 .burger-line{
+    border: 2px solid var(--color-primary);
     width: 30px;
-    height: 3px;
-    background-color: var(--color-primary);
+    height: 0px;
 }
 
 .burger-menu{
@@ -941,7 +941,7 @@ footer{
     .burger-menu{
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 7px;
     }
 
     .not-only-grid{
@@ -996,15 +996,32 @@ footer{
 
     .footer-contact-column:nth-child(1){
         grid-row: 1/4;
+        & > a{
+            justify-self: center;
+        }
     }
     .footer-contact-column:nth-child(2){
         grid-row: 4/7;
+        & > .footer-title{
+            padding-inline: 10px;
+        }
+        & > a:nth-child(2){
+            text-align: left;
+        }
     }
+
     .footer-contacts{
         grid-template-columns: 1fr;
         justify-items: center;
         text-align: center;
-        // max-width: 302px;
+        max-width: 300px;
+        row-gap: 40px;
+        padding-inline: 0px;
+
+        & > img{
+            padding-top: 0;
+            max-width: clamp(16.25rem, 14.2857rem + 9.5238vw, 18.75rem);;
+        }
     }
 }
 
@@ -1028,7 +1045,7 @@ footer{
         }
         & > * > .card-number-donation {
             justify-content: center;
-            
+
             & > * {
                 font-size: clamp(0.9375rem, 0.5233rem + 2.008vw, 1.25rem);
             }
