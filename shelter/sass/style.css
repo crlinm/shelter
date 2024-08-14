@@ -977,6 +977,7 @@ footer {
 @media (max-width: 460px) {
   .about-the-shelter-grid {
     padding-inline: 0px;
+    padding-bottom: 42px;
     justify-items: center;
     row-gap: clamp(1rem, -8.8365rem + 47.6923vw, 4.875rem);
   }
@@ -998,7 +999,7 @@ footer {
   .our-friends-title {
     width: 90%;
     font-size: 25px;
-    padding-bottom: 8px;
+    padding-bottom: 10px;
   }
   .our-friends-pics-grid {
     grid-template-columns: 1fr 1fr;
@@ -1028,11 +1029,15 @@ footer {
   .our-friends-pics-grid {
     padding: 30px 25px 0;
   }
-  .our-friends-pics-grid > * {
-    justify-content: center;
+  .our-friends-pics-grid > .our-friends-slider-arrow.left-arrow {
+    padding-left: 43px;
+    position: relative;
+    top: -10px;
   }
   .our-friends-pics-grid > .our-friends-slider-arrow.right-arrow {
-    justify-self: center;
+    padding-right: 43px;
+    position: relative;
+    top: -10px;
   }
   .donation {
     padding-bottom: 35px;
