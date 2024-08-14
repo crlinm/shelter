@@ -926,6 +926,7 @@ footer{
 
 
     .nav-grid{
+        transition: all 0.3s;
         padding-inline: clamp(1.25rem, 0.778rem + 2.2883vw, 1.875rem);
         & > ul{
             display: none;
@@ -935,7 +936,8 @@ footer{
     .burger-menu{
         display: flex;
         flex-direction: column;
-        gap: 7px;
+        gap: 6px;
+        padding-top: 4px;
 
         &>div{
             border: 2px solid var(--color-primary);
@@ -983,13 +985,13 @@ footer{
     // pets page
     .our-friends-pets{
         padding-top: clamp(2.375rem, 0.4107rem + 9.5238vw, 4.875rem);
-        padding-bottom: 45px;
+        padding-bottom: 42px;
     }
     .our-friends-pets-title{
         padding-bottom: clamp(2.5rem, 3.1136rem + -2.9748vw, 1.6875rem);
     }
     .our-friends-pics-flex{
-        row-gap: 27px;
+        row-gap: 25px;
     }
     .slider-pets{
         padding-top: 40px;
@@ -1129,7 +1131,7 @@ footer{
 
     .about-the-shelter-grid{
         padding-inline: 0px;
-        padding-bottom: 42px;
+        padding-bottom: 40px;
         justify-items: center;
         row-gap: clamp(1rem, -8.8365rem + 47.6923vw, 4.875rem);
 
@@ -1159,13 +1161,13 @@ footer{
 
     .our-friends{
         padding-top: 42px;
-        padding-bottom: 42px;
+        padding-bottom: 10px;
     }
 
     .our-friends-title{
         width: 90%;
         font-size: 25px;
-        padding-bottom: 10px;
+        padding-bottom: 41px;
     }
 
     .our-friends-pics-grid{
