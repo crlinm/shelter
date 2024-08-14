@@ -454,7 +454,7 @@ a {
 
 .card-number-donation {
   border-radius: 9px;
-  padding: 10px 15px;
+  padding: 10px 14px;
   justify-content: center;
   background: var(--color-primary);
   display: inline-flex;
@@ -922,25 +922,36 @@ footer {
   .our-friends-pics-flex > .our-friends-slider-card.hide-mobile {
     display: none;
   }
-  .donation > * > img {
+  .donation {
+    padding-inline: 20px;
+    padding-top: 40px;
+    gap: 42px;
+  }
+  .donation > * img {
     max-width: clamp(16.25rem, -4.0437rem + 98.3936vw, 31.5625rem);
   }
-  .donation > * > h2 {
+  .donation > * h2 {
     font-size: clamp(1.5625rem, 0.7342rem + 4.0161vw, 2.1875rem);
     text-align: center;
+    padding-bottom: 24px;
   }
-  .donation > * > .donation-bank-name {
+  .donation > * .donation-bank-name {
+    font-family: var(--font-family);
     text-align: center;
+    line-height: 160%;
+    letter-spacing: 0;
   }
-  .donation > * > .card-number-donation {
+  .donation > * .card-donation-container {
     display: flex;
     justify-content: center;
+  }
+  .donation > * .card-number-donation {
     max-width: 349px;
   }
-  .donation > * > .card-number-donation > * {
+  .donation > * .card-number-donation > div {
     font-size: clamp(0.9375rem, 0.5233rem + 2.008vw, 1.25rem);
   }
-  .donation > * > .card-number-donation > * > .donation-note {
+  .donation > * .donation-note {
     text-align: justify;
   }
 }
@@ -1000,6 +1011,9 @@ footer {
   }
   .help-shelter-title {
     padding-bottom: 10px;
+  }
+  .donation {
+    padding-bottom: 35px;
   }
   .footer-contacts > * > .footer-title {
     font-size: 25px;

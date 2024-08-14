@@ -497,7 +497,7 @@ a{
 
 .card-number-donation{
     border-radius: 9px;
-    padding: 10px 15px;
+    padding: 10px 14px;
     justify-content: center;
 
     background: var(--color-primary);
@@ -1064,25 +1064,40 @@ footer{
     }
 
     .donation {
-        & > * > img{
-            max-width: clamp(16.25rem, -4.0437rem + 98.3936vw, 31.5625rem);
-        }
-        & > * > h2{
-            font-size: clamp(1.5625rem, 0.7342rem + 4.0161vw, 2.1875rem);
-            text-align: center;
-        }
-        & > * > .donation-bank-name{
-            text-align: center;
-        }
-        & > * > .card-number-donation {
-            display: flex;
-            justify-content: center;
-            max-width: 349px;
+        padding-inline: 20px;
+        padding-top: 40px;
+        gap: 42px;
 
-            & > * {
-                font-size: clamp(0.9375rem, 0.5233rem + 2.008vw, 1.25rem);
+        & > * {
+            img{
+                max-width: clamp(16.25rem, -4.0437rem + 98.3936vw, 31.5625rem);
             }
-            & > * > .donation-note {
+            h2{
+                font-size: clamp(1.5625rem, 0.7342rem + 4.0161vw, 2.1875rem);
+                text-align: center;
+                padding-bottom: 24px;
+            }
+            .donation-bank-name{
+                font-family: var(--font-family);
+                text-align: center;
+                line-height: 160%;
+                letter-spacing: 0;
+            }
+
+            .card-donation-container{
+                display: flex;
+                justify-content: center;
+            }
+            & .card-number-donation {
+                // display: flex;
+                // justify-content: center;
+                max-width: 349px;
+
+                & > div {
+                    font-size: clamp(0.9375rem, 0.5233rem + 2.008vw, 1.25rem);
+                }
+            }
+            .donation-note {
                 text-align: justify;
             }
         }
@@ -1165,6 +1180,10 @@ footer{
     .help-shelter-title{
         // font-size: 25px;
         padding-bottom: 10px;
+    }
+
+    .donation{
+        padding-bottom: 35px;
     }
 
     .footer-contacts{
