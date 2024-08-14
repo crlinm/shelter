@@ -86,12 +86,6 @@ a{
     padding-left: 2px;
 }
 
-.burger-line{
-    border: 2px solid var(--color-primary);
-    width: 30px;
-    height: 0px;
-}
-
 .burger-menu{
     display: none;
 }
@@ -942,6 +936,16 @@ footer{
         display: flex;
         flex-direction: column;
         gap: 7px;
+
+        &>div{
+            border: 2px solid var(--color-primary);
+            width: 30px;
+            height: 0px;
+        }
+    }
+
+    .burger-menu.pets>*{
+        border-color: #000;
     }
 
     .not-only-grid{
@@ -975,6 +979,23 @@ footer{
     .about-the-shelter-grid{
         padding-top: 42px;
     }
+
+    // pets page
+    .our-friends-pets{
+        padding-top: clamp(2.375rem, 0.4107rem + 9.5238vw, 4.875rem);
+        padding-bottom: 45px;
+    }
+    .our-friends-pets-title{
+        padding-bottom: clamp(2.5rem, 3.1136rem + -2.9748vw, 1.6875rem);
+    }
+    .our-friends-pics-flex{
+        row-gap: 27px;
+    }
+    .slider-pets{
+        padding-top: 40px;
+        padding-bottom: 0px;
+        gap: clamp(0.625rem, 0.1058rem + 2.5172vw, 1.3125rem);
+    }
 }
 
 
@@ -992,6 +1013,11 @@ footer{
         // &>.our-friends-slider-arrow.right-arrow{
         //     justify-self: end;
         // }
+    }
+
+    .help-shelter-title{
+        font-size: clamp(1.5625rem, 1.0714rem + 2.381vw, 2.1875rem);
+        // padding-bottom: 10px;
     }
 
     .can-help-our-shelter>div>div{
@@ -1049,7 +1075,9 @@ footer{
             text-align: center;
         }
         & > * > .card-number-donation {
+            display: flex;
             justify-content: center;
+            max-width: 349px;
 
             & > * {
                 font-size: clamp(0.9375rem, 0.5233rem + 2.008vw, 1.25rem);
@@ -1065,7 +1093,7 @@ footer{
     .can-help-our-shelter{
         row-gap: 30px;
         padding-top: 35px;
-        padding-bottom: 46px;
+        padding-bottom: 42px;
         align-content: center;
         justify-content: center;
 
@@ -1135,7 +1163,7 @@ footer{
     }
 
     .help-shelter-title{
-        font-size: 25px;
+        // font-size: 25px;
         padding-bottom: 10px;
     }
 
@@ -1158,6 +1186,8 @@ footer{
     .our-friends-pics-grid > .our-friends-slider-arrow.right-arrow{
         justify-self: center;
     }
+
+
 }
 
 // @media (max-width: 295px) {
