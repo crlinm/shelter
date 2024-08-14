@@ -820,8 +820,7 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     -moz-column-gap: 10%;
          column-gap: 10%;
-    padding-left: 69px;
-    padding-right: 69px;
+    padding-inline: clamp(0.9375rem, -1.7143rem + 12.8571vw, 4.3125rem);
   }
   .nav-grid {
     padding-inline: clamp(1.25rem, 0.778rem + 2.2883vw, 1.875rem);
@@ -867,6 +866,9 @@ footer {
   }
   .our-friends-pics-grid > .hide-mobile {
     display: none;
+  }
+  .can-help-our-shelter > div > div {
+    font-size: clamp(0.9375rem, 0.692rem + 1.1905vw, 1.25rem);
   }
   .footer-contact-column:nth-child(1) {
     grid-row: 1/4;
@@ -920,6 +922,25 @@ footer {
     text-align: justify;
   }
 }
+@media (max-width: 510px) {
+  .can-help-our-shelter {
+    row-gap: 30px;
+    padding-top: 35px;
+    padding-bottom: 46px;
+    align-content: center;
+    justify-content: center;
+  }
+  .can-help-our-shelter > div {
+    row-gap: 20px;
+  }
+  .can-help-our-shelter > div > div {
+    line-height: 110%;
+  }
+  .can-help-our-shelter > div > img {
+    width: 50px;
+    height: 50px;
+  }
+}
 @media (max-width: 460px) {
   .about-the-shelter-grid {
     padding-inline: 0px;
@@ -955,26 +976,9 @@ footer {
     width: 90%;
     font-size: 25px;
   }
-  .can-help-our-shelter {
-    -moz-column-gap: 40px;
-         column-gap: 40px;
-    row-gap: 20px;
-    padding: 35px 15px 0px;
-    align-content: center;
-    justify-content: center;
-  }
-  .can-help-our-shelter > div {
-    row-gap: 20px;
-  }
-  .can-help-our-shelter > div > div {
-    font-size: 15px;
-    line-height: 110%;
-  }
-  .can-help-our-shelter > div > img {
-    width: 50px;
-  }
   .help-shelter-title {
     font-size: 25px;
+    padding-bottom: 10px;
   }
   .footer-contacts > * > .footer-title {
     font-size: 25px;
