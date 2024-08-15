@@ -129,7 +129,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   color: var(--color-dark-s);
-  padding: 85px 40px 0 40px;
+  padding: 85px 40px 1px 40px;
 }
 .not-only-grid > img {
   width: 100%;
@@ -195,7 +195,7 @@ a {
   grid-template-columns: min-content min-content;
   gap: 120px;
   justify-content: center;
-  padding: 80px 40px 100px 41px;
+  padding: 80px 40px 96px 41px;
 }
 
 .about-the-shelter-text {
@@ -218,7 +218,7 @@ a {
   font-size: 15px;
   line-height: 160%;
   color: var(--color-dark-xl);
-  padding-top: 25px;
+  padding-top: 24px;
 }
 
 .our-friends-container {
@@ -228,7 +228,7 @@ a {
 .our-friends {
   max-width: 1280px;
   margin-inline: auto;
-  padding-top: 78px;
+  padding-top: 80px;
   padding-bottom: 60px;
 }
 
@@ -311,7 +311,8 @@ a {
 
 .our-friends-slider-arrow {
   background-color: transparent;
-  margin-top: 25px;
+  margin-top: 30px;
+  padding-left: 4px;
 }
 .our-friends-slider-arrow > * {
   grid-row: 1/-1;
@@ -339,7 +340,7 @@ a {
   letter-spacing: 0.06em;
   color: var(--color-dark-3xl);
   padding-top: 28px;
-  padding-bottom: 36px;
+  padding-bottom: 40px;
 }
 
 .get-the-rest-btn {
@@ -374,7 +375,7 @@ a {
   letter-spacing: 0.06em;
   text-align: center;
   color: var(--color-dark-l);
-  padding-top: 82px;
+  padding-top: 81px;
 }
 
 .can-help-our-shelter {
@@ -387,7 +388,7 @@ a {
   -moz-column-gap: 120px;
        column-gap: 120px;
   row-gap: 55px;
-  padding: 60px 40px 100px 40px;
+  padding: 58px 39px 100px 40px;
 }
 .can-help-our-shelter > * {
   display: flex;
@@ -508,7 +509,7 @@ footer {
   -moz-column-gap: 130px;
        column-gap: 130px;
   row-gap: 32px;
-  padding: 40px 40px 0 40px;
+  padding: 40px 40px 1px 40px;
 }
 .footer-contacts > .footer-contact-column {
   display: grid;
@@ -534,7 +535,7 @@ footer {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: var(--color-light-xl);
-  padding-top: 19px;
+  padding-top: 18px;
 }
 
 .footer-p {
@@ -585,7 +586,7 @@ footer {
   margin-inline: auto;
   /* background: var(--color-light-l); */
   padding-top: 78px;
-  padding-bottom: 59px;
+  padding-bottom: 56px;
 }
 
 .our-friends-pets-title {
@@ -716,7 +717,7 @@ footer {
   .donation {
     grid-template-columns: 1fr;
     gap: 60px;
-    padding-bottom: 98px;
+    padding-bottom: 95px;
   }
   .donation > *:nth-child(1) {
     order: 2;
@@ -729,8 +730,7 @@ footer {
     grid-template-rows: repeat(3, 1fr);
     -moz-column-gap: 60px;
          column-gap: 60px;
-    padding-left: 69px;
-    padding-right: 69px;
+    padding-inline: 69px;
   }
   .our-friends-pets-title {
     padding-bottom: 27px;
@@ -738,13 +738,14 @@ footer {
   .slider-pets {
     padding-top: 33px;
     padding-bottom: 20px;
+    gap: 20px;
   }
 }
 @media (max-width: 860px) {
   .not-only-grid {
     grid-template-columns: 1fr;
     row-gap: 114px;
-    padding-top: 55px;
+    padding-top: 56px;
   }
   .not-only-text {
     justify-self: center;
@@ -801,11 +802,14 @@ footer {
   .footer-title {
     padding-top: 0;
   }
+  .our-friends-pics-flex {
+    row-gap: 29px;
+  }
   .our-friends-pics-flex > * {
-    row-gap: 30px;
+    row-gap: 29px;
   }
   .our-friends-pets {
-    padding-bottom: 58px;
+    padding-bottom: 59px;
   }
 }
 @media (max-width: 767px) {
@@ -844,12 +848,13 @@ footer {
     font-size: clamp(1.5625rem, 0.6658rem + 4.3478vw, 2.75rem);
     text-align: center;
     letter-spacing: 0.06em;
+    padding-left: 1px;
   }
   .not-only-text > p {
     text-align: center;
   }
   .make-a-friend-btn-container {
-    padding-top: 58px;
+    padding-top: 57px;
     padding-bottom: 6px;
   }
   .not-only {
@@ -926,7 +931,7 @@ footer {
   }
   .donation {
     padding-inline: 20px;
-    padding-top: 40px;
+    padding-top: 43px;
     gap: 42px;
   }
   .donation > * img {
@@ -935,7 +940,7 @@ footer {
   .donation > * h2 {
     font-size: clamp(1.5625rem, 0.7342rem + 4.0161vw, 2.1875rem);
     text-align: center;
-    padding-bottom: 24px;
+    padding-bottom: 20px;
   }
   .donation > * .donation-bank-name {
     font-family: var(--font-family);
@@ -949,6 +954,8 @@ footer {
   }
   .donation > * .card-number-donation {
     max-width: 349px;
+    padding-top: 12px;
+    padding-bottom: 8px;
   }
   .donation > * .card-number-donation > div {
     font-size: clamp(0.9375rem, 0.5233rem + 2.008vw, 1.25rem);
@@ -960,7 +967,7 @@ footer {
 @media (max-width: 510px) {
   .can-help-our-shelter {
     row-gap: 30px;
-    padding-top: 35px;
+    padding-top: 32px;
     padding-bottom: 42px;
     align-content: center;
     justify-content: center;
@@ -1003,10 +1010,15 @@ footer {
     text-align: center;
   }
   .our-friends {
-    padding-top: 42px;
-    padding-bottom: 10px;
+    padding-top: 41px;
+    padding-bottom: 42px;
   }
-  .our-friends-title {
+  .our-friends > .our-friends-title {
+    width: 90%;
+    font-size: 25px;
+    padding-bottom: 9px;
+  }
+  .our-friends-pets .our-friends-title {
     width: 90%;
     font-size: 25px;
     padding-bottom: 41px;
@@ -1033,8 +1045,7 @@ footer {
     padding-bottom: 0px;
   }
   .help-shelter-title {
-    padding-bottom: 10px;
-    padding-top: 42px;
+    padding: 42px 2px 10px;
   }
   .our-friends-pics-grid {
     padding: 30px 25px 0;
@@ -1042,17 +1053,23 @@ footer {
   .our-friends-pics-grid > .our-friends-slider-arrow.left-arrow {
     padding-left: 43px;
     position: relative;
-    top: -10px;
+    top: -12px;
   }
   .our-friends-pics-grid > .our-friends-slider-arrow.right-arrow {
     padding-right: 43px;
     position: relative;
-    top: -10px;
+    top: -12px;
   }
   .donation {
-    padding-bottom: 35px;
+    padding-bottom: 38px;
+  }
+  .footer-contacts {
+    padding-top: 28px;
   }
   .footer-contacts > * > .footer-title {
     font-size: 25px;
+  }
+  .our-friends-pics-flex > * {
+    row-gap: 30px;
   }
 }/*# sourceMappingURL=style.css.map */
