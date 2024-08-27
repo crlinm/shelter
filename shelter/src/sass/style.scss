@@ -304,30 +304,35 @@ a{
     border-radius: 9px;
     padding: 30px 35px;
 
-    &>.friends-slider-list {
-        opacity: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        border-radius: 9px;
-        column-gap: 90px;
-        row-gap: 30px;
-        
-        &>*{
+    &>.friends-list__container{
+        &>.friends-slider-list {
+            opacity: 100%;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
+            justify-content: center;
             border-radius: 9px;
-            row-gap: 29px;
-            background: var(--color-light-s);
-    
-            &>img{
-                width: 270px;
-                height: 270px;
+            column-gap: 90px;
+            row-gap: 30px;
+
+            // position: relative;
+            // overflow: hidden;
+            
+            &>*{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-radius: 9px;
+                row-gap: 29px;
+                background: var(--color-light-s);
+        
+                &>img{
+                    width: 270px;
+                    height: 270px;
+                }
+        
+                padding-bottom: 30px;
             }
-    
-            padding-bottom: 30px;
         }
     }
 }
@@ -807,10 +812,12 @@ footer{
         // grid-template-columns: 1fr 1fr 1fr;
         justify-content: stretch;
 
-        &>.friends-slider-list{
-            gap: 5vw;
-            .hide-planshet{
-                display: none;
+        &>.friends-list__container{
+            &>.friends-slider-list{
+                gap: 5vw;
+                .hide-planshet{
+                    display: none;
+                }
             }
         }
 
@@ -1261,8 +1268,10 @@ footer{
         grid-template-columns: 1fr 1fr;
         column-gap: 0;
 
-        &>.friends-slider-list{
-            grid-column: 1/-1;
+        &>.friends-list__container{
+            &>.friends-slider-list{
+                grid-column: 1/-1;
+            }
         }
 
         &>.our-friends-slider-arrow{
@@ -1327,6 +1336,22 @@ footer{
 //     }
 // }
 
-.hide{
-    display: none;
+
+.friends-list__container{
+    width: 78vw;
+    overflow: hidden;
+}
+
+.friends-slider-list{
+    position: relative;
+}
+
+@keyframes move-right {
+    from {left: 0px;}
+    to {left: -990px;}
+}
+ 
+.transition-right {
+    animation-name: move-right;
+    animation-duration: 1s;
 }
