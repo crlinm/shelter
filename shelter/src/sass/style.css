@@ -1077,7 +1077,7 @@ footer {
   }
 }
 .friends-list__container {
-  width: 990px;
+  width: 1050px;
   overflow: hidden;
 }
 
@@ -1090,7 +1090,7 @@ footer {
     left: 0px;
   }
   to {
-    left: -990px;
+    left: -1050px;
   }
 }
 .transition-right {
