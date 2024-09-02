@@ -39,6 +39,42 @@ function createPet(pet){
     card.append(name);
     card.append(btn);
 
+    card.addEventListener("click", (e) => {
+        popupCard.classList.toggle("hidden");
+        const popupContent = document.querySelector('.pop-up__content');
+        console.log('popupContent', popupContent);
+        popupContent.textContent = '';
+
+        const imgPopup = document.createElement('img');
+        imgPopup.alt = '';
+        imgPopup.src = pet.img;
+
+        const descriptionPet = document.createElement('div');
+        descriptionPet.classList.add("description-pet");
+
+        const petTitle = document.createElement('h3');
+        petTitle.classList.add('pet-title');
+        petTitle.textContent = pet.name;
+
+        const pBreed = document.createElement('p');
+        pBreed.classList.add('breed');
+        pBreed.textContent = pet.type + " - " + pet.breed;
+
+        const pDescription = document.createElement('p');
+        pDescription.classList.add('description');
+        pDescription.textContent = pet.description;
+
+        descriptionPet.append(petTitle);
+        descriptionPet.append(pBreed);
+        descriptionPet.append(pDescription);
+
+        popupContent.append(imgPopup);
+        popupContent.append(descriptionPet);
+        body.classList.toggle("shadow");
+    });
+
+    popupCard.addEventListener("click", popupClose);
+
     PETS_LIST_MAIN.append(card);
 }
 
@@ -98,7 +134,7 @@ function popupClose(event){
         popupCard.classList.toggle("hidden");
         body.classList.toggle("shadow");
     }
-}   
+}
 
 async function init(){
     await addRandomPet();
