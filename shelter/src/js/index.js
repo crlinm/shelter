@@ -42,7 +42,6 @@ function createPet(pet){
     card.addEventListener("click", (e) => {
         popupCard.classList.toggle("hidden");
         const popupContent = document.querySelector('.pop-up__content');
-        console.log('popupContent', popupContent);
         popupContent.textContent = '';
 
         const imgPopup = document.createElement('img');
@@ -64,9 +63,38 @@ function createPet(pet){
         pDescription.classList.add('description');
         pDescription.textContent = pet.description;
 
+
+        const ulDesc = document.createElement("ul");
+        const liAge = document.createElement("li");
+        const bAge = document.createElement("b");
+        bAge.textContent = 'Age: ';
+        liAge.append(bAge, pet.age);
+
+        const liInoculations = document.createElement("li");
+        const bInoculations = document.createElement("b");
+        bInoculations.textContent = 'Inoculations: ';
+        liInoculations.append(bInoculations, pet.inoculations);
+
+        const liDiseases = document.createElement("li");
+        const bDiseases = document.createElement("b");
+        bDiseases.textContent = 'Diseases: ';
+        liDiseases.append(bDiseases, pet.diseases);
+        // liDiseases.innerHTML = '<b>Diseases: </b>' + pet.diseases;
+
+        const liParasites = document.createElement("li");
+        const bParasites = document.createElement("b");
+        bParasites.textContent = 'Parasites: ';
+        liParasites.append(bParasites, pet.parasites);
+
+        ulDesc.append(liAge);
+        ulDesc.append(liInoculations);
+        ulDesc.append(liDiseases);
+        ulDesc.append(liParasites);
+
         descriptionPet.append(petTitle);
         descriptionPet.append(pBreed);
         descriptionPet.append(pDescription);
+        descriptionPet.append(ulDesc);
 
         popupContent.append(imgPopup);
         popupContent.append(descriptionPet);
