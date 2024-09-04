@@ -2,10 +2,17 @@ const BUTTON_LEFT = document.querySelector(".left-arrow");
 const BUTTON_RIGHT = document.querySelector(".right-arrow");
 
 const PETS_LIST_MAIN = document.querySelector(".friends-slider-list")
+
 const petsCard = document.querySelector(".our-friends-slider-card")
 const popupCard = document.querySelector(".pop-up-card");
 const body = document.querySelector("body");
 // const widthPetsList = document.querySelector(".friends-slider-list").clientWidth;
+
+let pets;
+let current;
+let previous;
+let rest;
+
 
 async function getPets(){
     const res = await fetch("src/js/pets.json");
@@ -23,7 +30,6 @@ function fillPopup(pet){
     
     const popupContent = document.querySelector('.pop-up__content');
     popupContent.textContent = '';
-    console.log(popupCard)
 
     const imgPopup = document.createElement('img');
     imgPopup.alt = '';
@@ -44,9 +50,8 @@ function fillPopup(pet){
     pDescription.classList.add('description');
     pDescription.textContent = pet.description;
 
-
     const ulDesc = document.createElement("ul");
-    
+
     const liAge = document.createElement("li");
     const bAge = document.createElement("b");
     bAge.textContent = 'Age: ';
@@ -109,62 +114,59 @@ function randomIndex(minInd, maxInd){
     return Math.round(Math.random()*(maxInd - minInd) + minInd);
 }
 
-function generatePetsOrder(cntCards, cntPets) {
-    let tempArray = Array.from({length: cntPets}, (v, i) => i);
-    console.log(tempArray);
-
+function generatePetsOrderMain(cntCards, cntPets) {
     let minInd = 0;
     const maxInd = cntPets-1;
 
     while (minInd < cntCards){
         let randomInd = randomIndex(minInd, maxInd);
         console.log('randomInd', randomInd);
-        const temp = tempArray[minInd];
-        tempArray[minInd] = tempArray[randomInd];
-        tempArray[randomInd] = temp;
+        const temp = rest[minInd];
+        rest[minInd] = rest[randomInd];
+        rest[randomInd] = temp;
         minInd++;
     }
-    console.log('tempArray res: ', tempArray, tempArray.slice(0, 3), minInd, maxInd)
-    return tempArray;
+
+    console.log('tempArray res: ', rest, rest.slice(0, 3), minInd, maxInd);
+
+    current = rest.slice(0, cntCards);
+    previous = [];
+    rest = rest.slice(cntCards, cntPets);
+    // return current;
 }
 
-async function addRandomPet(){
-    const pets = await getPets();
-    const cntPets = pets.length;
-    const cntCards = 3;
-    let orderArray = generatePetsOrder(cntCards, cntPets);
-    console.log(orderArray)
-    for (let i of orderArray.slice(0, cntCards)){
+async function addRandomPets(startPos, cntCards){
+    for (let i of current.slice(startPos, cntCards)){
         createPet(pets[i]);
     }
 }
 
-async function newSliderPets(){
-    await addRandomPet();
-    PETS_LIST_MAIN.classList.add("transition-right");
-}
-
-function getPetDescription(event){
-    console.log(event, event.target, event.target.classList, event.target.parentNode);
-    if (event.target.classList.contains("our-friends-slider-card") ||
-        event.target.parentNode.classList.contains("our-friends-slider-card")){
-        popupCard.classList.toggle("hidden");
-    }
-}
-
 function popupClose(event){
-    // body.classList.toggle("shadow");
-    // console.log(body.clientHeight, body.offsetHeight)
-    // if (event.target.classList.contains("pop-up-card") ||
-    //     event.target.parentNode.classList.contains("pop-up-card")){
     if (event.target.classList.contains("pop-up-card")){
         popupCard.classList.toggle("hidden");
         body.classList.toggle("shadow");
     }
 }
 
+async function newSliderPets(){
+    const cntCards = 3;
+    const startPos = 3;
+    generatePetsOrderMain(cntCards, cntPets);
+    await addRandomPets(startPos, cntCards);
+    PETS_LIST_MAIN.classList.add("transition-right");
+}
+
+
 async function init(){
-    await addRandomPet();
+    pets = await getPets();
+    const cntPets = pets.length;
+    const cntCards = 3;
+    const startPos = 0;
+    rest = Array.from({length: cntPets}, (v, i) => i);
+
+    generatePetsOrderMain(cntCards, cntPets);
+
+    await addRandomPets(startPos, cntCards);
 }
 
 init();
