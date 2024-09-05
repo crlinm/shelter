@@ -1,5 +1,14 @@
 const popupCard = document.querySelector(".pop-up-card");
+popupCard.addEventListener("click", (e) => popupClose(e));
 
+function popupClose(event){
+    // console.log(event.target, event.currentTarget)
+    // if (event.target.classList.contains("pop-up-card")){
+    if (event.target == event.currentTarget){
+        popupCard.classList.toggle("hidden");
+        document.body.classList.toggle("shadow");
+    }
+}
 
 export class Pet {
     constructor ({name, img, type, breed, description, age, inoculations, diseases, parasites}){
@@ -37,9 +46,6 @@ export class Pet {
     
         card.addEventListener("click", (e) => this.fillPopup());
     
-        popupCard.addEventListener("click", (e) => this.popupClose(e));
-    
-        // PETS_LIST_MAIN.append(card);
         return card;
     }
 
@@ -100,12 +106,5 @@ export class Pet {
         document.body.classList.toggle("shadow");
 
         return popupCard;
-    }
-
-    popupClose(event){
-        if (event.target.classList.contains("pop-up-card")){
-            popupCard.classList.toggle("hidden");
-            document.body.classList.toggle("shadow");
-        }
     }
 }

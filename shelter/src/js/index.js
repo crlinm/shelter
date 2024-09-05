@@ -16,12 +16,12 @@ let rest;
 
 
 function randomIndex(minInd, maxInd){
-    return Math.round(Math.random()*(maxInd - minInd) + minInd);
+    return Math.floor(Math.random()*(maxInd - minInd) + minInd);
 }
 
 function generatePetsOrderMain(cntCards, cntPets) {
     let minInd = 0;
-    const maxInd = rest.length-1;
+    const maxInd = rest.length;
 
     while (minInd < cntCards){
         let randomInd = randomIndex(minInd, maxInd);
