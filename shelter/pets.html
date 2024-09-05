@@ -6,6 +6,7 @@
     <title>Our pets</title>
     <link rel="stylesheet" href="src/sass/style.css">
     <link rel="shortcut icon" href="dog-48-203766.png" type="image/x-icon">
+    <script type="module" src="src/js/pets.js"></script>
 </head>
 
 <body>
@@ -38,46 +39,6 @@
                 <div class="our-friends-pets">
                     <h3 class="our-friends-title our-friends-pets-title">Our friends who <br> are looking for a house</h3>
                     <div class="our-friends-pics-flex">
-                        <div class="our-friends-slider-card">
-                            <img src="src/assets/img/pets-katrine.png" alt="">
-                            <div class="our-friends-pet-name">Katrine</div>
-                            <div class="learn-more-btn">Learn more</div>
-                        </div>
-                        <div class="our-friends-slider-card">
-                            <img src="src/assets/img/pets-jennifer.png" alt="">
-                            <div class="our-friends-pet-name">Jennifer</div>
-                            <div class="learn-more-btn">Learn more</div>
-                        </div>
-                        <div class="our-friends-slider-card">
-                            <img src="src/assets/img/pets-woody.png" alt="">
-                            <div class="our-friends-pet-name">Woody</div>
-                            <div class="learn-more-btn">Learn more</div>
-                        </div>
-                        <div class="our-friends-slider-card hide-mobile">
-                            <img src="src/assets/img/pets-sophia.png" alt="" style="width: 270px;">
-                            <div class="our-friends-pet-name hide-mobile">Sophia</div>
-                            <div class="learn-more-btn">Learn more</div>
-                        </div>
-                        <div class="our-friends-slider-card hide-mobile">
-                            <img src="src/assets/img/pets-timmy.png" alt="">
-                            <div class="our-friends-pet-name">Timmy</div>
-                            <div class="learn-more-btn">Learn more</div>
-                        </div>
-                        <div class="our-friends-slider-card hide-mobile">
-                            <img src="src/assets/img/pets-charly.png" alt="">
-                            <div class="our-friends-pet-name">Charly</div>
-                            <div class="learn-more-btn">Learn more</div>
-                        </div>
-                        <div class="our-friends-slider-card hide-planshet">
-                            <img src="src/assets/img/pets-scarlett.png" alt="">
-                            <div class="our-friends-pet-name">Scarlett</div>
-                            <div class="learn-more-btn">Learn more</div>
-                        </div>
-                        <div class="our-friends-slider-card hide-planshet">
-                            <img src="src/assets/img/pets-freddy.png" alt="">
-                            <div class="our-friends-pet-name">Freddie</div>
-                            <div class="learn-more-btn">Learn more</div>
-                        </div>
                     </div>
                     <div class="slider-pets">
                         <div class="slider-pets-item slider-pets-inactive-item">&lt;&lt;</div>
@@ -119,6 +80,9 @@
 
         </footer>
 
-        <script src="src/js/index.js"></script>
+        <div class="pop-up-card hidden">
+            <div class="pop-up__content"></div>
+        </div>
+
 </body>
 </html>
