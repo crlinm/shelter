@@ -744,55 +744,55 @@ footer{
     padding-top: 55px;
     padding-bottom: 42px;
     margin-inline: auto;
-}
 
-.slider-pets-item{
-    width: 52px;
-    height: 52px;
-    border: 2px solid var(--color-dark-s);
-    border-radius: 100px;
+    &>.pets-item{
+        width: 52px;
+        height: 52px;
+        border: 2px solid var(--color-dark-s);
+        border-radius: 100px;
 
-    font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 115%;
-    letter-spacing: 0.06em;
-    text-align: center;
-    align-content: center;
-    color: var(--color-dark-s);
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 115%;
+        letter-spacing: 0.06em;
+        text-align: center;
+        align-content: center;
+        color: var(--color-dark-s);
 
-    transition: 0.3s;
-    user-select: none;
-}
+        transition: 0.3s;
+        user-select: none;
+    }
 
-.slider-pets-current-page{
-    color: var(--color-dark-3xl);
+    &>.current-page{
+        color: var(--color-dark-3xl);
 
-    background: var(--color-primary);
-    border: 2px solid var(--color-primary);
+        background: var(--color-primary);
+        border: 2px solid var(--color-primary);
 
-    cursor: default;
-}
+        cursor: default;
+    }
 
-/* .slider-pets-current-page:hover{
-    border: 2px solid var(--color-primary-light);
-    background: var(--color-primary-light);
-} */
+    /* &>.current-page:hover{
+        border: 2px solid var(--color-primary-light);
+        background: var(--color-primary-light);
+    } */
 
-.slider-pets-next-item{
-    border: 2px solid var(--color-primary);
-    color: var(--color-dark-3xl);
+    &>.next-item{
+        border: 2px solid var(--color-primary);
+        color: var(--color-dark-3xl);
 
-    cursor: pointer;
-}
+        cursor: pointer;
+    }
 
-.slider-pets-next-item:hover{
-    background: var(--color-primary-light);
-    border-color: var(--color-primary-light);;
-}
+    &>.next-item:hover{
+        background: var(--color-primary-light);
+        border-color: var(--color-primary-light);;
+    }
 
-.slider-pets-inactive-item{
-    cursor: not-allowed;
+    &>.inactive-item{
+        cursor: not-allowed;
+    }
 }
 
 
@@ -1350,10 +1350,11 @@ footer{
     from {left: 0px;}
     to {left: -1050px;}
 }
- 
+
 .transition-right {
     animation-name: move-right;
     animation-duration: 1s;
+    transform: translateX(-110%);
 }
 
 .pop-up-card{

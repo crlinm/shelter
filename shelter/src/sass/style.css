@@ -635,9 +635,12 @@ footer {
   padding-top: 55px;
   padding-bottom: 42px;
   margin-inline: auto;
+  /* &>.current-page:hover{
+      border: 2px solid var(--color-primary-light);
+      background: var(--color-primary-light);
+  } */
 }
-
-.slider-pets-item {
+.slider-pets > .pets-item {
   width: 52px;
   height: 52px;
   border: 2px solid var(--color-dark-s);
@@ -655,30 +658,22 @@ footer {
      -moz-user-select: none;
           user-select: none;
 }
-
-.slider-pets-current-page {
+.slider-pets > .current-page {
   color: var(--color-dark-3xl);
   background: var(--color-primary);
   border: 2px solid var(--color-primary);
   cursor: default;
 }
-
-/* .slider-pets-current-page:hover{
-    border: 2px solid var(--color-primary-light);
-    background: var(--color-primary-light);
-} */
-.slider-pets-next-item {
+.slider-pets > .next-item {
   border: 2px solid var(--color-primary);
   color: var(--color-dark-3xl);
   cursor: pointer;
 }
-
-.slider-pets-next-item:hover {
+.slider-pets > .next-item:hover {
   background: var(--color-primary-light);
   border-color: var(--color-primary-light);
 }
-
-.slider-pets-inactive-item {
+.slider-pets > .inactive-item {
   cursor: not-allowed;
 }
 
@@ -1096,6 +1091,7 @@ footer {
 .transition-right {
   animation-name: move-right;
   animation-duration: 1s;
+  transform: translateX(-110%);
 }
 
 .pop-up-card {
