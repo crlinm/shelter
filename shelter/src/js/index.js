@@ -1,10 +1,9 @@
-import {getPets} from "./utils.js"
+import {getPets, generatePetsOrder} from "./utils.js"
 import {Pet} from './Pet.js';
 
 
 const BUTTON_LEFT = document.querySelector(".left-arrow");
 const BUTTON_RIGHT = document.querySelector(".right-arrow");
-
 const PETS_LIST_MAIN = document.querySelector(".friends-slider-list")
 
 // const widthPetsList = document.querySelector(".friends-slider-list").clientWidth;
@@ -15,47 +14,44 @@ let previous;
 let rest;
 
 
-function randomIndex(minInd, maxInd){
-    return Math.floor(Math.random()*(maxInd - minInd) + minInd);
-}
+// function generatePetsOrderMain(cntCards, cntPets) {
+//     let minInd = 0;
+//     const maxInd = rest.length;
 
-function generatePetsOrderMain(cntCards, cntPets) {
-    let minInd = 0;
-    const maxInd = rest.length;
+//     while (minInd < cntCards){
+//         let randomInd = randomIndex(minInd, maxInd);
+//         const temp = rest[minInd];
+//         rest[minInd] = rest[randomInd];
+//         rest[randomInd] = temp;
+//         minInd++;
+//     }
 
-    while (minInd < cntCards){
-        let randomInd = randomIndex(minInd, maxInd);
-        const temp = rest[minInd];
-        rest[minInd] = rest[randomInd];
-        rest[randomInd] = temp;
-        minInd++;
-    }
+//     console.log('previous, current, rest before: ', previous, current, rest);
+//     previous = current;
+//     current = rest.slice(0, cntCards);
+//     rest = rest.slice(cntCards, cntPets).concat(previous);
+//     console.log('previous, current, rest after: ', previous, current, rest);
+// }
 
-    console.log('previous, current, rest before: ', previous, current, rest);
-    previous = current;
-    current = rest.slice(0, cntCards);
-    rest = rest.slice(cntCards, cntPets).concat(previous);
-    console.log('previous, current, rest after: ', previous, current, rest);
-}
-
-async function addRandomPets(startPos, cntCards){
+function addRandomPets(current, startPos, cntCards){
     for (let i of current.slice(startPos, cntCards)){
         const petCard = pets[i].createPet();
         PETS_LIST_MAIN.append(petCard);
     }
 }
 
-async function newSliderPets(){
-    const cntCards = 3;
-    const startPos = 0;
-    const cntPets = pets.length;
-    generatePetsOrderMain(cntCards, cntPets);
-    console.log('current, startPos, cntCards', current, startPos, cntCards);
+// function newSliderPets(){
+//     const cntCards = 3;
+//     const startPos = 0;
+//     const cntPets = pets.length;
+//     generatePetsOrderMain(cntCards, cntPets);
+//     console.log('current, startPos, cntCards', current, startPos, cntCards);
 
-    await addRandomPets(startPos, cntCards);
-    PETS_LIST_MAIN.classList.add("transition-right");
-}
+//     addRandomPets(startPos, cntCards);
+//     PETS_LIST_MAIN.classList.add("transition-right");
+// }
 
+const generatePets = (data) => data.map(pet => new Pet(pet));
 
 async function init(){
     const data = await getPets();
@@ -66,17 +62,19 @@ async function init(){
     const startPos = 0;
     rest = Array.from({length: cntPets}, (v, i) => i);
 
-    generatePetsOrderMain(cntCards, cntPets);
+    rest = generatePetsOrder(rest, cntCards);
+    console.log('previous, current, rest before: ', previous, current, rest);
+    previous = current;
+    current = rest.slice(0, cntCards);
+    rest = rest.slice(cntCards, cntPets).concat(previous);
+    console.log('previous, current, rest after: ', previous, current, rest);
 
-    await addRandomPets(startPos, cntCards);
+    addRandomPets(current, startPos, cntCards);
 }
 
 init();
 
-BUTTON_RIGHT.addEventListener("click", newSliderPets);
+// BUTTON_RIGHT.addEventListener("click", newSliderPets);
 PETS_LIST_MAIN.addEventListener("animationend", () => {
     PETS_LIST_MAIN.classList.remove("transition-right");
 })
-
-
-const generatePets = (data) => data.map(pet => new Pet(pet));

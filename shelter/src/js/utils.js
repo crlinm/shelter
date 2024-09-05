@@ -10,3 +10,21 @@ export async function getPets(){
     }
 }
 
+function randomIndex(minInd, maxInd){
+    return Math.floor(Math.random()*(maxInd - minInd) + minInd);
+}
+
+export function generatePetsOrder(petsPage, cntCards) {
+    let minInd = 0;
+    const maxInd = petsPage.length;
+
+    while (minInd < cntCards){
+        let randomInd = randomIndex(minInd, maxInd);
+        const temp = petsPage[minInd];
+        petsPage[minInd] = petsPage[randomInd];
+        petsPage[randomInd] = temp;
+        minInd++;
+    }
+
+    return petsPage;
+}
