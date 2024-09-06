@@ -79,23 +79,31 @@ export class Pet {
         const liAge = document.createElement("li");
         const bAge = document.createElement("b");
         bAge.textContent = 'Age: ';
-        liAge.append(bAge, this.age);
+        const span1 = document.createElement('span');
+        span1.append(bAge, this.age);
+        liAge.append(span1);
     
         const liInoculations = document.createElement("li");
         const bInoculations = document.createElement("b");
         bInoculations.textContent = 'Inoculations: ';
-        liInoculations.append(bInoculations, this.inoculations);
+        const span2 = document.createElement('span');
+        span2.append(bInoculations, this.inoculations);
+        liInoculations.append(span2);
     
         const liDiseases = document.createElement("li");
         const bDiseases = document.createElement("b");
         bDiseases.textContent = 'Diseases: ';
-        liDiseases.append(bDiseases, this.diseases);
+        const span3 = document.createElement('span');
+        span3.append(bDiseases, this.diseases);
+        liDiseases.append(span3);
         // liDiseases.innerHTML = '<b>Diseases: </b>' + this.diseases;
     
         const liParasites = document.createElement("li");
         const bParasites = document.createElement("b");
         bParasites.textContent = 'Parasites: ';
-        liParasites.append(bParasites, this.parasites);
+        const span4 = document.createElement('span');
+        span4.append(bParasites, this.parasites);
+        liParasites.append(span4);
     
         ulDesc.append(liAge, liInoculations, liDiseases, liParasites);
     
