@@ -11,16 +11,18 @@ const PETS_LIST_MAIN = document.querySelector(".our-friends-pics-flex")
 let pets;
 let rest8 = [];
 let rest6 = [];
-const pagesCnt = 6;
+let pagesCnt;
 let cntCards = 8;
 let petsAll = [];
-let offset = 0;
+let leftPet = 0;
 let currentPage = 1;
+let cntPets;
 
 
-function addRandomPets(current, startPos, cntCards){
+function addRandomPets(current, cntCards){
     PETS_LIST_MAIN.textContent = '';
-    for (let i of current.slice(startPos, cntCards)){
+    console.log('addRandomPets: current, cntCard', current, cntCards)
+    for (let i of current.slice(0, cntCards)){
         const petCard = pets[i].createPet();
         PETS_LIST_MAIN.append(petCard);
     }
@@ -30,33 +32,33 @@ const generatePets = (data) => data.map(pet => new Pet(pet));
 
 async function init(){
     const data = await getPets();
-    const cntPets = data.length;
+    cntPets = data.length*6;
     pets = generatePets(data);
 
-    const startPos = 0;
-    cntCards = 8;
+    getCardCnt();
+    pagesCnt = cntPets/cntCards;
     
-    for (let i=0; i < pagesCnt*cntCards; i++){ 
+    for (let i=0; i < cntPets; i++){ 
         const result = generatePetsOrderI(rest8, rest6);
         petsAll.push(result[0]);
         rest8 = result[1];
         rest6 = result[2];
     }
-    console.log(petsAll)
 
-    console.log((currentPage-1)*cntCards, (currentPage)*cntCards);
-    addRandomPets(petsAll.slice((currentPage-1)*cntCards, (currentPage)*cntCards), startPos, cntCards);
+    console.log('petsAll: ', petsAll);
+    // console.log((currentPage-1)*cntCards, (currentPage)*cntCards);
+    addRandomPets(petsAll.slice((currentPage-1)*cntCards, (currentPage)*cntCards), cntCards);
 }
 
 init()
 
 function buttonLeftPress(){
     if (currentPage > 1){
-        const startPos = 0;
-        const cntCards = 8;
+        getCardCnt();
+        pagesCnt = cntPets/cntCards;
         currentPage--;
         // console.log((currentPage-1)*cntCards, (currentPage)*cntCards);
-        addRandomPets(petsAll.slice((currentPage-1)*cntCards, (currentPage)*cntCards), startPos, cntCards);
+        addRandomPets(petsAll.slice((currentPage-1)*cntCards, (currentPage)*cntCards), cntCards);
         PAGE_NUMBER.textContent = currentPage;
         if (currentPage == 1){
             BUTTON_LEFT.classList.remove("next-item")
@@ -74,12 +76,12 @@ function buttonLeftPress(){
 }
 
 function buttonRightPress(){
-    if (currentPage < 6){
-        const startPos = 0;
-        const cntCards = 8;
+    getCardCnt();
+    pagesCnt = cntPets/cntCards;
+    if (currentPage < pagesCnt){
         currentPage++;
-        // console.log((currentPage-1)*cntCards, (currentPage)*cntCards);
-        addRandomPets(petsAll.slice((currentPage-1)*cntCards, (currentPage)*cntCards), startPos, cntCards);
+        console.log('buttonRightPress:', (currentPage-1)*cntCards, (currentPage)*cntCards);
+        addRandomPets(petsAll.slice((currentPage-1)*cntCards, (currentPage)*cntCards), cntCards);
         PAGE_NUMBER.textContent = currentPage;
         if (currentPage > 1){
             BUTTON_LEFT.classList.add("next-item")
@@ -98,3 +100,26 @@ function buttonRightPress(){
 
 BUTTON_LEFT.addEventListener("click", buttonLeftPress)
 BUTTON_RIGHT.addEventListener("click", buttonRightPress)
+
+window.addEventListener("resize", () => {
+    const w0 = window.clientWidth;
+    const w = window.innerWidth;
+    console.log('w0, w', w0, w);
+    getCardCnt();
+    console.log('resize, cntCards', cntCards);
+    addRandomPets(petsAll.slice((currentPage-1)*cntCards, (currentPage)*cntCards), cntCards);
+})
+
+
+
+function getCardCnt(){
+    const w = window.innerWidth;
+    if (w >= 1200) {
+        cntCards = 8;
+    }
+    else if (w < 1200 && w > 580) {
+        cntCards = 6;
+    } else {
+        cntCards = 3;
+    }
+}
