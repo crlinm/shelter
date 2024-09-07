@@ -28,3 +28,27 @@ export function generatePetsOrder(petsPage, cntCards) {
 
     return petsPage;
 }
+
+export function generatePetsOrderI(rest8, rest6) {
+    if (rest8.length == 0) {
+        rest8 = Array.from({length: 8}, (v, i) => i);
+    }
+    if (rest6.length <= 2) {
+        rest6 = Array.from({length: 8}, (v, i) => i);
+    }
+
+    let minInd = 0;
+
+    let intersection = rest8.filter(x => rest6.includes(x));
+
+    let randomInd = randomIndex(minInd, intersection.length);
+    const temp = intersection[randomInd];
+
+    const index8 = rest8.indexOf(temp);
+    rest8.splice(index8, 1);
+    const index6 = rest6.indexOf(temp);
+    rest6.splice(index6, 1);
+
+    const result = [temp, rest8, rest6];
+    return result;
+}
