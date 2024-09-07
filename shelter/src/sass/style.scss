@@ -1487,7 +1487,7 @@ footer{
             9px 10px 11px;
     
             &>.description{
-                font-size: 13px;
+                font-size: clamp(0.8125rem, 0.6037rem + 0.4175vw, 0.9375rem);
                 padding-block: clamp(1.25rem, -0.8993rem + 4.4088vw, 2.625rem);
             }
             
@@ -1511,7 +1511,7 @@ footer{
             padding: 10px 9px 10px 11px;
 
             &>.description{
-                font-size: clamp(0.8125rem, 0.6037rem + 0.4175vw, 0.9375rem);
+                font-size: 13px;
                 padding-block: 20px;
             }
     
@@ -1522,9 +1522,9 @@ footer{
     }
 }
 
-@media (max-width: 690px) {
+@media (max-width: 750px) {
     .pop-up__content{
-        width: clamp(15rem, -33.75rem + 169.5652vw, 39.375rem);
+        width: clamp(15rem, -26.5278rem + 144.4444vw, 39.375rem);
         // height: 341px;
         grid-template-columns: 1fr;
 

@@ -1206,7 +1206,7 @@ footer {
     padding: clamp(0.625rem, -3.2828rem + 8.016vw, 3.125rem) 9px 10px 11px;
   }
   .pop-up__content > .description-pet > .description {
-    font-size: 13px;
+    font-size: clamp(0.8125rem, 0.6037rem + 0.4175vw, 0.9375rem);
     padding-block: clamp(1.25rem, -0.8993rem + 4.4088vw, 2.625rem);
   }
   .pop-up__content > .description-pet > ul {
@@ -1225,16 +1225,16 @@ footer {
     padding: 10px 9px 10px 11px;
   }
   .pop-up__content > .description-pet > .description {
-    font-size: clamp(0.8125rem, 0.6037rem + 0.4175vw, 0.9375rem);
+    font-size: 13px;
     padding-block: 20px;
   }
   .pop-up__content > .description-pet > ul {
     gap: 6px;
   }
 }
-@media (max-width: 690px) {
+@media (max-width: 750px) {
   .pop-up__content {
-    width: clamp(15rem, -33.75rem + 169.5652vw, 39.375rem);
+    width: clamp(15rem, -26.5278rem + 144.4444vw, 39.375rem);
     grid-template-columns: 1fr;
   }
   .pop-up__content > img {
