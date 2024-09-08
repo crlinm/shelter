@@ -1124,6 +1124,7 @@ footer {
   right: -42px;
   top: -50px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .popup-btn-close:hover {

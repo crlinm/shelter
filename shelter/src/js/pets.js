@@ -35,7 +35,7 @@ async function init(){
     cntPets = data.length*6;
     pets = generatePets(data);
 
-    getCardCnt();
+    refreshCardCnt();
     
     for (let i=0; i < cntPets; i++){ 
         const result = generatePetsOrderI(rest8, rest6);
@@ -51,63 +51,37 @@ init()
 
 function buttonLeftPress(){
     if (currentPage > 1){
-        getCardCnt();
         currentPage--;
+        refreshCardCnt();
         addRandomPets(petsAll.slice((currentPage-1)*cntCards, (currentPage)*cntCards), cntCards);
         PAGE_NUMBER.textContent = currentPage;
-        if (currentPage == 1){
-            makeActive(BUTTON_LEFT, false)
-            makeActive(BUTTON_LEFT2, false)
-        }
-        if (currentPage <= pagesCnt){
-            makeActive(BUTTON_RIGHT, true)
-            makeActive(BUTTON_RIGHT2, true)
-        }
     }
 }
 
 function buttonLeft2Press(){
-    getCardCnt();
     if (currentPage > 1){
         currentPage = 1;
+        refreshCardCnt();
         addRandomPets(petsAll.slice((currentPage-1)*cntCards, (currentPage)*cntCards), cntCards);
         PAGE_NUMBER.textContent = currentPage;
-
-        makeActive(BUTTON_LEFT, false)
-        makeActive(BUTTON_LEFT2, false)
-        makeActive(BUTTON_RIGHT, true)
-        makeActive(BUTTON_RIGHT2, true)
     }
 }
 
 function buttonRightPress(){
-    getCardCnt();
     if (currentPage < pagesCnt){
         currentPage++;
+        refreshCardCnt();
         addRandomPets(petsAll.slice((currentPage-1)*cntCards, (currentPage)*cntCards), cntCards);
         PAGE_NUMBER.textContent = currentPage;
-        if (currentPage > 1){
-            makeActive(BUTTON_LEFT, true)
-            makeActive(BUTTON_LEFT2, true)
-        }
-        if (currentPage == pagesCnt){
-            makeActive(BUTTON_RIGHT, false)
-            makeActive(BUTTON_RIGHT2, false)
-        }
     }
 }
 
 function buttonRight2Press(){
-    getCardCnt();
     if (currentPage < pagesCnt){
         currentPage = pagesCnt;
+        refreshCardCnt();
         addRandomPets(petsAll.slice((currentPage-1)*cntCards, (currentPage)*cntCards), cntCards);
         PAGE_NUMBER.textContent = currentPage;
-        
-        makeActive(BUTTON_RIGHT, false)
-        makeActive(BUTTON_RIGHT2, false)
-        makeActive(BUTTON_LEFT, true)
-        makeActive(BUTTON_LEFT2, true)
     }
 }
 
@@ -129,12 +103,12 @@ BUTTON_RIGHT2.addEventListener("click", buttonRight2Press)
 
 window.addEventListener("resize", () => {
     const w = window.innerWidth;
-    getCardCnt();
+    refreshCardCnt();
     addRandomPets(petsAll.slice((currentPage-1)*cntCards, (currentPage)*cntCards), cntCards);
 })
 
 
-function getCardCnt(){
+function refreshCardCnt(){
     const w = window.innerWidth;
     if (w >= 1200) {
         leftPet = (currentPage-1)*cntCards;
@@ -151,4 +125,25 @@ function getCardCnt(){
         currentPage = Math.floor(leftPet / cntCards) + 1;
     }
     pagesCnt = cntPets/cntCards;
+
+    if (currentPage == pagesCnt){
+        makeActive(BUTTON_LEFT, true)
+        makeActive(BUTTON_LEFT2, true)
+        makeActive(BUTTON_RIGHT, false)
+        makeActive(BUTTON_RIGHT2, false)
+    }
+
+    if (currentPage == 1){
+        makeActive(BUTTON_LEFT, false)
+        makeActive(BUTTON_LEFT2, false)
+        makeActive(BUTTON_RIGHT, true)
+        makeActive(BUTTON_RIGHT2, true)
+    } 
+
+    if (currentPage > 1 && currentPage < pagesCnt){
+        makeActive(BUTTON_LEFT, true)
+        makeActive(BUTTON_LEFT2, true)
+        makeActive(BUTTON_RIGHT, true)
+        makeActive(BUTTON_RIGHT2, true)
+    }
 }
