@@ -102,7 +102,6 @@ BUTTON_RIGHT2.addEventListener("click", buttonRight2Press)
 
 
 window.addEventListener("resize", () => {
-    const w = window.innerWidth;
     refreshCardCnt();
     addRandomPets(petsAll.slice((currentPage-1)*cntCards, (currentPage)*cntCards), cntCards);
 })

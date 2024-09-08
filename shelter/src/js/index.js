@@ -1,55 +1,39 @@
-import {getPets, generatePetsOrder} from "./utils.js"
+import {getPets, generatePetsOrder, generateSliderOrderI} from "./utils.js"
 import {Pet} from './Pet.js';
 
 
 const BUTTON_LEFT = document.querySelector(".left-arrow");
 const BUTTON_RIGHT = document.querySelector(".right-arrow");
 const PETS_LIST_MAIN = document.querySelector(".friends-slider-list")
+const MENU_ICON = document.querySelector(".burger-menu")
 
-// const widthPetsList = document.querySelector(".friends-slider-list").clientWidth;
+// let widthPetsList = document.querySelector(".friends-list__container").clientWidth;
 
 let pets;
 let current = [];
 let previous;
-let rest;
+let cntCards = 3;
+let w;
 
 
-// function generatePetsOrderMain(cntCards, cntPets) {
-//     let minInd = 0;
-//     const maxInd = rest.length;
-
-//     while (minInd < cntCards){
-//         let randomInd = randomIndex(minInd, maxInd);
-//         const temp = rest[minInd];
-//         rest[minInd] = rest[randomInd];
-//         rest[randomInd] = temp;
-//         minInd++;
-//     }
-
-//     console.log('previous, current, rest before: ', previous, current, rest);
-//     previous = current;
-//     current = rest.slice(0, cntCards);
-//     rest = rest.slice(cntCards, cntPets).concat(previous);
-//     console.log('previous, current, rest after: ', previous, current, rest);
-// }
-
-function addRandomPets(current, startPos, cntCards){
-    for (let i of current.slice(startPos, cntCards)){
+function addRandomPets(current){
+    PETS_LIST_MAIN.textContent = '';
+    for (let i of current.slice(0, cntCards)){
         const petCard = pets[i].createPet();
         PETS_LIST_MAIN.append(petCard);
     }
 }
 
-// function newSliderPets(){
-//     const cntCards = 3;
-//     const startPos = 0;
-//     const cntPets = pets.length;
-//     generatePetsOrderMain(cntCards, cntPets);
-//     console.log('current, startPos, cntCards', current, startPos, cntCards);
+function newSliderPets(){
+    refreshCardCnt();
 
-//     addRandomPets(startPos, cntCards);
-//     PETS_LIST_MAIN.classList.add("transition-right");
-// }
+    const result = generateSliderOrderI(current, previous, cntCards);
+    current = result[0]
+    previous = result[1]
+
+    addRandomPets(current, cntCards);
+    // PETS_LIST_MAIN.classList.add("transition-right");
+}
 
 const generatePets = (data) => data.map(pet => new Pet(pet));
 
@@ -58,23 +42,42 @@ async function init(){
     const cntPets = data.length;
     pets = generatePets(data);
 
-    const cntCards = 3;
-    const startPos = 0;
-    rest = Array.from({length: cntPets}, (v, i) => i);
+    refreshCardCnt();
 
-    rest = generatePetsOrder(rest, cntCards);
-    console.log('previous, current, rest before: ', previous, current, rest);
-    previous = current;
-    current = rest.slice(0, cntCards);
-    rest = rest.slice(cntCards, cntPets).concat(previous);
-    console.log('previous, current, rest after: ', previous, current, rest);
+    const result = generateSliderOrderI(current, previous, cntCards);
+    current = result[0]
+    previous = result[1]
 
-    addRandomPets(current, startPos, cntCards);
+    addRandomPets(current, cntCards);
 }
 
 init();
 
-// BUTTON_RIGHT.addEventListener("click", newSliderPets);
-PETS_LIST_MAIN.addEventListener("animationend", () => {
-    PETS_LIST_MAIN.classList.remove("transition-right");
+BUTTON_RIGHT.addEventListener("click", newSliderPets);
+// PETS_LIST_MAIN.addEventListener("animationend", () => {
+//     PETS_LIST_MAIN.classList.remove("transition-right");
+// })
+
+MENU_ICON.addEventListener("click", () => {
+    MENU_ICON.classList.toggle("active-burger-icon")
 })
+
+window.addEventListener("resize", () => {
+    refreshCardCnt();
+
+    addRandomPets(current, cntCards);
+})
+
+function refreshCardCnt(){
+    // const w = window.innerWidth;
+    w = document.documentElement.clientWidth;
+
+    if (w >= 1270) {
+        cntCards = 3;
+    }
+    else if (w < 1270 && w > 780) {
+        cntCards = 2;
+    } else {
+        cntCards = 1;
+    }
+}

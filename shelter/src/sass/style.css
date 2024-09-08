@@ -1072,10 +1072,20 @@ footer {
   }
 }
 .friends-list__container {
-  width: 1050px;
+  width: 990px;
   overflow: hidden;
 }
 
+@media (max-width: 1270px) {
+  .friends-list__container {
+    width: 580px;
+  }
+}
+@media (max-width: 780px) {
+  .friends-list__container {
+    width: 270px;
+  }
+}
 .friends-slider-list {
   position: relative;
 }
@@ -1257,6 +1267,10 @@ footer {
     right: -30px;
   }
 }
+.active-burger-icon {
+  transform: rotate(90deg);
+}
+
 .hidden {
   visibility: hidden;
 }/*# sourceMappingURL=style.css.map */

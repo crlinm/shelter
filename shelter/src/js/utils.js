@@ -29,6 +29,27 @@ export function generatePetsOrder(petsPage, cntCards) {
     return petsPage;
 }
 
+export function generateSliderOrderI(current, previous, cntCards) {
+    let rest = Array.from({length: 8}, (v, i) => i);
+    for (let cur of current){
+        const index = rest.indexOf(cur);
+        rest.splice(index, 1);
+    }
+    previous = current;
+    
+    let minInd = 0;
+    while (minInd < cntCards){
+        let randomInd = randomIndex(minInd, rest.length);
+        const temp = rest[minInd];
+        rest[minInd] = rest[randomInd];
+        rest[randomInd] = temp;
+        minInd++;
+    }
+    current = rest.slice(0, cntCards);
+    const result = [current, previous];
+    return result;
+}
+
 export function generatePetsOrderI(rest8, rest6) {
     if (rest8.length == 0) {
         rest8 = Array.from({length: 8}, (v, i) => i);
