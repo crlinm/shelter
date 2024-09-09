@@ -14,6 +14,7 @@ let current = [];
 let previous;
 let cntCards = 3;
 let w;
+let lastDirection = '';
 
 
 function addRandomPets(current){
@@ -24,12 +25,19 @@ function addRandomPets(current){
     }
 }
 
-function newSliderPets(){
+function newSliderPets(direction){
     refreshCardCnt();
 
-    const result = generateSliderOrderI(current, previous, cntCards);
-    current = result[0]
-    previous = result[1]
+    if (direction == lastDirection || lastDirection == ''){
+        const result = generateSliderOrderI(current, previous, cntCards);
+        current = result[0];
+        previous = result[1];
+    } else {
+        const temp = previous;
+        previous = current;
+        current = temp;
+    }
+    lastDirection = direction;
 
     addRandomPets(current, cntCards);
     // PETS_LIST_MAIN.classList.add("transition-right");
@@ -45,15 +53,16 @@ async function init(){
     refreshCardCnt();
 
     const result = generateSliderOrderI(current, previous, cntCards);
-    current = result[0]
-    previous = result[1]
+    current = result[0];
+    previous = result[1];
 
     addRandomPets(current, cntCards);
 }
 
 init();
 
-BUTTON_RIGHT.addEventListener("click", newSliderPets);
+BUTTON_RIGHT.addEventListener("click", () => newSliderPets('right'));
+BUTTON_LEFT.addEventListener("click", () => newSliderPets('left'));
 // PETS_LIST_MAIN.addEventListener("animationend", () => {
 //     PETS_LIST_MAIN.classList.remove("transition-right");
 // })
