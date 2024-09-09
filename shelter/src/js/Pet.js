@@ -26,7 +26,7 @@ export class Pet {
     createPet(){
         const card = document.createElement('div');
         card.classList.add("our-friends-slider-card");
-        card.classList.add("hide");
+        // card.classList.add("hide");
         
         const img = document.createElement('img');
         img.alt = '';

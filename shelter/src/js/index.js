@@ -12,14 +12,15 @@ const MENU_ICON = document.querySelector(".burger-menu")
 let pets;
 let current = [];
 let previous;
-let cntCards = 3;
+let cntCardsShow = 3;
+let cntCardsFix = 3;
 let w;
 let lastDirection = '';
 
 
-function addRandomPets(current){
+function addRandomPets(current, cntCardsShow){
     PETS_LIST_MAIN.textContent = '';
-    for (let i of current.slice(0, cntCards)){
+    for (let i of current.slice(0, cntCardsShow)){
         const petCard = pets[i].createPet();
         PETS_LIST_MAIN.append(petCard);
     }
@@ -29,7 +30,7 @@ function newSliderPets(direction){
     refreshCardCnt();
 
     if (direction == lastDirection || lastDirection == ''){
-        const result = generateSliderOrderI(current, previous, cntCards);
+        const result = generateSliderOrderI(current, previous, cntCardsFix);
         current = result[0];
         previous = result[1];
     } else {
@@ -39,7 +40,7 @@ function newSliderPets(direction){
     }
     lastDirection = direction;
 
-    addRandomPets(current, cntCards);
+    addRandomPets(current, cntCardsShow);
     // PETS_LIST_MAIN.classList.add("transition-right");
 }
 
@@ -52,11 +53,11 @@ async function init(){
 
     refreshCardCnt();
 
-    const result = generateSliderOrderI(current, previous, cntCards);
+    const result = generateSliderOrderI(current, previous, cntCardsFix);
     current = result[0];
     previous = result[1];
 
-    addRandomPets(current, cntCards);
+    addRandomPets(current, cntCardsShow);
 }
 
 init();
@@ -74,7 +75,7 @@ MENU_ICON.addEventListener("click", () => {
 window.addEventListener("resize", () => {
     refreshCardCnt();
 
-    addRandomPets(current, cntCards);
+    addRandomPets(current, cntCardsShow);
 })
 
 function refreshCardCnt(){
@@ -82,11 +83,11 @@ function refreshCardCnt(){
     w = document.documentElement.clientWidth;
 
     if (w >= 1270) {
-        cntCards = 3;
+        cntCardsShow = 3;
     }
     else if (w < 1270 && w > 780) {
-        cntCards = 2;
+        cntCardsShow = 2;
     } else {
-        cntCards = 1;
+        cntCardsShow = 1;
     }
 }
