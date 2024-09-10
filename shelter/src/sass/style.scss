@@ -267,31 +267,6 @@ a{
     padding-bottom: 30px;
 }
 
-// .our-friends-pics-grid{
-//     display: grid;
-//     grid-template-columns: 1fr repeat(3, min-content) 1fr;
-//     grid-template-rows: repeat(3, min-content);
-//     grid-auto-flow: column;
-//     justify-content: center;
-//     align-items: baseline;
-//     column-gap: 90px;
-//     row-gap: 28px;
-    
-//     border-radius: 9px;
-//     padding: 30px 35px;
-
-//     &>* {
-//         grid-row: 1/-1;
-//         display: grid;
-//         grid-template-rows: subgrid;
-//         justify-items: center;
-
-//         border-radius: 9px;
-//         background-color: var(--color-light-s);
-//         padding-bottom: 30px;
-//         justify-content: space-between;
-//     }
-// }
 
 .our-friends-pics-grid{
     display: grid;
@@ -305,37 +280,42 @@ a{
     padding: 30px 35px;
 
     &>.friends-list__container{
-        &>.friends-slider-list {
-            opacity: 100%;
+        &>.friends-slider{
             display: flex;
             flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            border-radius: 9px;
-            column-gap: 90px;
-            row-gap: 30px;
-
-            // position: relative;
-            // overflow: hidden;
-            
-            &>.our-friends-slider-card{
+            flex-wrap: nowrap;
+            &>.friends-slider-pack {
+                opacity: 100%;
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
+                justify-content: center;
                 border-radius: 9px;
-                row-gap: 29px;
-                background: var(--color-light-s);
-        
-                &>img{
-                    width: 270px;
-                    height: 270px;
-                }
-        
-                padding-bottom: 30px;
-            }
+                column-gap: 90px;
+                row-gap: 30px;
 
-            &>.hide-sl{
-                display: none;
+                // position: relative;
+                // overflow: hidden;
+                
+                &>.our-friends-slider-card{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    border-radius: 9px;
+                    row-gap: 29px;
+                    background: var(--color-light-s);
+            
+                    &>img{
+                        width: 270px;
+                        height: 270px;
+                    }
+            
+                    padding-bottom: 30px;
+                }
+
+                &>.hide-sl{
+                    display: none;
+                }
             }
         }
     }
@@ -385,17 +365,6 @@ a{
     text-align: center;
     color: var(--color-dark-l);
 }
-
-// .our-friends-slider-arrow{
-//     background-color: transparent;
-//     & > * {
-//         // grid-row: 1/-1;
-//         align-self: center;
-//     }
-
-//     margin-top: 30px;
-//     padding-left: 4px;
-// }
 
 .our-friends-slider-arrow{
     background-color: transparent;
@@ -817,13 +786,15 @@ footer{
         justify-content: stretch;
 
         &>.friends-list__container{
-            &>.friends-slider-list{
-                gap: 5vw;
-                .hide-planshet{
-                    display: none;
-                }
-                .hide-sl{
-                    display: none;
+            &>.friends-slider{
+                &>.friends-slider-pack{
+                    gap: 5vw;
+                    .hide-planshet{
+                        display: none;
+                    }
+                    .hide-sl{
+                        display: none;
+                    }
                 }
             }
         }
@@ -953,18 +924,6 @@ footer{
         padding: 30px 31px;
     }
 
-    // .our-friends-pics-flex{
-    //     &>.our-friends-slider-card.hide-planshet{
-    //         display: none;
-    //     }
-    // }
-
-    // .friends-slider-list{
-    //     .hide-mobile{
-    //         display: none;
-    //     }
-    // }
-
     .footer-contacts{
         column-gap: 37px;
         padding-bottom: 30px;
@@ -1084,7 +1043,6 @@ footer{
     .our-friends-pics-grid{
         column-gap: 7%;
         grid-template-columns: 1fr min-content 1fr;
-        // justify-content: stretch;
 
         &>.hide-mobile{
             display: none;
@@ -1092,15 +1050,10 @@ footer{
         &>.hide-sl{
             display: none;
         }
-
-        // &>.our-friends-slider-arrow.right-arrow{
-        //     justify-self: end;
-        // }
     }
 
     .help-shelter-title{
         font-size: clamp(1.5625rem, 1.0714rem + 2.381vw, 2.1875rem);
-        // padding-bottom: 10px;
     }
 
     .can-help-our-shelter>div>div{
@@ -1264,31 +1217,16 @@ footer{
         }
     }
 
-    // .our-friends-pics-grid{
-    //     grid-template-columns: 1fr 1fr;
-    //     // grid-auto-flow: row dense;
-    //     grid-template-rows: repeat(4, min-content);
-    //     column-gap: 0;
-    //     // justify-self: center;
 
-    //     &>.our-friends-slider-card{
-    //         grid-row: 1/4;
-    //         grid-column: 1/-1;
-    //         justify-content: center;
-    //     }
-
-    //     &>.our-friends-slider-arrow{
-    //         grid-row: 4;
-    //     }
-
-    // }
     .our-friends-pics-grid{
         grid-template-columns: 1fr 1fr;
         column-gap: 0;
 
         &>.friends-list__container{
-            &>.friends-slider-list{
-                grid-column: 1/-1;
+            &>.friends-slider{
+                &>.friends-slider-pack{
+                    grid-column: 1/-1;
+                }
             }
         }
 
@@ -1373,19 +1311,20 @@ footer{
 }
 
 
-.friends-slider-list{
+.friends-slider{
     position: relative;
+    height: 450px;
 }
 
-@keyframes move-right {
-    from {left: 0px;}
-    to {left: -1050px;}
+.friends-slider-pack{
+    position: absolute;
+    transition: all 1s;
 }
+
 
 .transition-right {
     animation-name: move-right;
     animation-duration: 1s;
-    transform: translateX(-110%);
 }
 
 .pop-up-card{
