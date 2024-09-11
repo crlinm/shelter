@@ -92,17 +92,6 @@ MENU_ICON.addEventListener("click", () => {
 })
 
 
-window.addEventListener("resize", () => {
-    refreshCardCnt();
-
-    for (let i=0; i<cntCardsShow; i++) {
-        currentNode.children.item(i).classList.remove("hide");
-    }
-    for (let i=cntCardsShow; i<current.length; i++) {
-        currentNode.children.item(i).classList.add("hide");
-    }
-})
-
 
 function refreshCardCnt(){
     // const w = window.innerWidth;

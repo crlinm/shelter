@@ -1100,10 +1100,16 @@ footer {
   .friends-list__container {
     width: 580px;
   }
+  .our-friends-slider-card:nth-child(3) {
+    display: none !important;
+  }
 }
 @media (max-width: 780px) {
   .friends-list__container {
     width: 270px;
+  }
+  .our-friends-slider-card:nth-child(2) {
+    display: none !important;
   }
 }
 .friends-slider {
