@@ -1,5 +1,6 @@
 import {getPets, generatePetsOrderI} from "./utils.js"
 import {Pet} from './Pet.js';
+import {menuOpen} from './burger.js';
 
 const BUTTON_LEFT2 = document.querySelector(".left-arrow2");
 const BUTTON_LEFT = document.querySelector(".left-arrow");

@@ -1,11 +1,11 @@
 import {getPets, generatePetsOrder, generateSliderOrderI} from "./utils.js"
 import {Pet} from './Pet.js';
+import {menuOpen} from './burger.js';
 
 
 const BUTTON_LEFT = document.querySelector(".left-arrow");
 const BUTTON_RIGHT = document.querySelector(".right-arrow");
 const PETS_LIST_MAIN = document.querySelector(".friends-slider");
-const MENU_ICON = document.querySelector(".burger-menu")
 
 
 let pets;
@@ -85,12 +85,6 @@ init();
 
 BUTTON_RIGHT.addEventListener("click", () => newSliderPets('right'));
 BUTTON_LEFT.addEventListener("click", () => newSliderPets('left'));
-
-
-MENU_ICON.addEventListener("click", () => {
-    MENU_ICON.classList.toggle("active-burger-icon")
-})
-
 
 
 function refreshCardCnt(){
