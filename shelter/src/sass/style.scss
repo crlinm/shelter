@@ -35,6 +35,8 @@ html{
 body {
     font-family: var(--font-family);
     font-size: 18px;
+    overflow-x: hidden;
+    // width: 100vw;
 }
 
 a{
@@ -1005,12 +1007,14 @@ footer{
 
         align-items: center;
         justify-content: center;
+        visibility: hidden;
 
         & .nav-activate{
             text-decoration-thickness: 3px;
         }
 
         &.nav-mobile-open{
+            visibility:visible;
             right: 0;
             &>.overlay{
                 opacity: 1;
