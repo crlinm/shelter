@@ -855,7 +855,7 @@ footer {
   }
   .nav-menu {
     background-color: var(--color-dark-3xl);
-    position: absolute;
+    position: fixed;
     right: -320px;
     top: 0;
     width: 320px;
